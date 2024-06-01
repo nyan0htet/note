@@ -6,3 +6,4 @@ main.synctex.gz
 *.out
 *.log
 *.fdb_latexmk
+.DS_store
