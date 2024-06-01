@@ -1,0 +1,62 @@
+\section{vector addition ($\vec{v}+\vec{w}$)}
+\subsection{မှတ်စု}
+\begin{itemize}
+    \item vector $\vec{v}, \vec{w}$ နှစ်ခုလုံး standard position မှာရှိရမယ်။
+    \item standard position မဟုတ်လျှင် standard position ပြောင်းပြီးမှပေါင်းရမည်။
+\end{itemize}
+\subsection{Definition}
+$\vec{v}=(v_1,v_2,\dots,v_n)\in\mathbb{R}^n$ နှင့် $\vec{w}=(w_1,w_2,\dots,w_n)\in\mathbb{R}^n$ ဖြစ်လျှင် $\vec{v}+\vec{w}$ က
+\begin{equation}
+    \centering
+    {\color{purple} \vec{v}+\vec{w}\stackrel{def}{=}(v_1+w_1,v_2+w_2,\dots,v_n+w_n)}
+    \label{eq:vector-addition}
+\end{equation}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/vector-and-vector-operation/diagram}{d4.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/vector-and-vector-operation/diagram}{d5.tex}
+\end{minipage}
+\subsection{Theorem}
+$\vec{v}, \vec{w}, \vec{x} \in\mathbb{R}$ တွေဟာ vector တွေဖြစ်ခဲ့လျှင်
+\begin{equation}
+    {\color{purple} \begin{split}
+            (a)\hspace{1.25cm}\vec{v}+\vec{w} & =\vec{w}+\vec{v}\quad{(commutativity)}            \\
+            (b)\quad(\vec{v}+\vec{w})+\vec{x} & = \vec{v}+(\vec{w}+\vec{x})\quad{(associativity)}
+        \end{split}}
+    \label{eq:vector-addition-theorem}
+\end{equation}
+\subsection{Example}
+\begin{center}
+    \import{fundamental/vector-and-vector-operation/diagram}{d7.tex}
+\end{center}
+in \ref{fig:vector-and-vector-operation-d7},
+\[
+    \begin{split}
+        (2,5,-1)+(1,-1,2) & = (2+1,5-1,-1+2) \\
+        & = (3,4,1) \hspace{3cm}{theorem }\ref{eq:vector-addition-theorem}(a) \\
+        (1,-1,2)+(2,5,-1) & = (1+2,-1+5,2-1) \\
+        & = (3,4,1) \hspace{3cm}{theorem }\ref{eq:vector-addition-theorem}(a) \\
+    \end{split}
+\]
+\begin{center}
+    \import{fundamental/vector-and-vector-operation/diagram}{d8.tex}
+\end{center}
+in \ref{fig:vector-and-vector-operation-d8},
+\[
+    \begin{split}
+        (1,2)+(3,1)+(2,-1) & = (1+3+2,2+1-1) \\
+                          & = (6,2) \\
+        ((1,2)+(3,1))+(2,-1) & = (1+3,2+1)+(2,-1) \\
+                          & = (4,3)+(2,-1) \\
+                          & = (4+2,3-1) \\
+                          & = (6,2) \hspace{3cm}{theorem }\ref{eq:vector-addition-theorem}(b) \\
+                          (1,2)+((3,1)+(2,-1)) & = (1,2)+(3+2,1-1) \\
+                          & = (1,2)+(5,0) \\
+                          & = (1+5,2+0) \\
+                          & = (6,2) \hspace{3cm}{theorem }\ref{eq:vector-addition-theorem}(b) \\
+    \end{split}
+\]

@@ -1,0 +1,28 @@
+\documentclass[b5paper]{book}
+%paper margin
+\usepackage[paper=b5paper,left=25mm,right=13mm,top=13mm,bottom=13mm]{geometry}
+%for nested import
+\usepackage{import}
+%for link
+\usepackage[colorlinks=true,linkcolor=blue,filecolor=magenta,urlcolor=cyan,pdftitle={Algebra}]{hyperref}
+%font style
+\usepackage{fontspec}
+\setmainfont{Pyidaungsu}
+%chapter text style
+\usepackage[Sonny]{fncychap}
+%tikz picture drawing
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+%picture caption
+\usepackage{caption}
+\usepackage{amssymb}
+%math
+\usepackage{amsmath}
+%margin note
+\usepackage{marginnote}
+\usepackage[dvipsnames]{xcolor}
+\begin{document}
+\tableofcontents
+\import{./front}{index.tex}
+\import{./main}{index.tex}
+\end{document}

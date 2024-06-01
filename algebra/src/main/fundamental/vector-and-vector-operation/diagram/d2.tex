@@ -1,0 +1,33 @@
+\tdplotsetmaincoords{45}{105}
+\begin{tikzpicture}[tdplot_main_coords]
+    %grid
+    \draw [-,very thin,lightgray,dashed] (0,3,0) -- (1,3,0);
+    \draw [-,very thin,lightgray,dashed] (0,3,0) -- (0,3,2);
+    \draw [-,very thin,lightgray,dashed] (0,3,2) -- (1,3,2);
+    \draw [-,very thin,lightgray,dashed] (0,0,2) -- (0,3,2);
+    \draw [-,very thin,lightgray,dashed] (1,0,0) -- (1,3,0);
+    \draw [-,very thin,lightgray,dashed] (1,3,0) -- (1,3,2);
+    %draw axis value
+    \foreach \x in {1}
+        {
+            \draw (\x,0,0) -- (\x,0,0) node [above left] {$\x$};
+            \draw [-,thin] (\x,-0.05,0) -- (\x,0.05,0);
+        }
+    \foreach \y in {1,2,3}
+        {
+            \draw (0,\y,0) -- (0,\y,0) node [below] {$\y$};
+            \draw [-,thin] (-0.05,\y,0) -- (0.05,\y,0);
+        }
+    \foreach \z in {1,2}
+        {
+            \draw (0,0,\z) -- (0,0,\z) node [left] {$\z$};
+            \draw [-,thin] (0,-0.05,\z) -- (0,0.05,\z);
+        }
+    %draw lines
+    \draw [->] (-0.5,0,0) -- (1.5,0,0) node[below left]{$x$};
+    \draw [->] (0,-0.5,0) -- (0,3.5,0) node[right]{$y$};
+    \draw [->] (0,0,-0.5) -- (0,0,2.5) node[above]{$z$};
+    \draw node[left,blue]{$0$} [->,very thick,blue] (0,0,0) -- (1,3,2) node[right]{$\vec{v}=(1,3,2)$};
+\end{tikzpicture}
+\captionof{figure}{{\footnotesize 3D vector $\vec{v}=(1,3,2)\in{R^3}$}}
+\label{fig:vector-and-vector-operation-d1}
