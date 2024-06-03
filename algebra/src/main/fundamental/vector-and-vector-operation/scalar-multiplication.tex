@@ -12,14 +12,57 @@
 \begin{center}
     \import{fundamental/vector-and-vector-operation/diagram}{d9.tex}
 \end{center}
+
 \subsection{Theorem}
 $\vec{v}, \vec{w} \in \mathbb{R}^n$ များသည် vectors, $c, d \in \mathbb{R}$ များသည် scalars များဖြစ်သည်။
 \begin{equation}
     {\color{purple}
         \begin{split}
-            (a) \hspace{2mm} c(\vec{v}+\vec{w})& =c\vec{v}+c\vec{w} \\
-            (b) \hspace{3mm} (c+d)\vec{v}& =c\vec{v}+d\vec{v} \\
-            (c) \hspace{7mm} c(d\vec{v})& =(cd)\vec{v}
+            (a) \hspace{2mm} c(\vec{v}+\vec{w}) & =c\vec{v}+c\vec{w} \\
+            (b) \hspace{3mm} (c+d)\vec{v}       & =c\vec{v}+d\vec{v} \\
+            (c) \hspace{7mm} c(d\vec{v})        & =(cd)\vec{v}
         \end{split}}
-        \label{eq:scalar-multiplication-theorem}
+    \label{eq:scalar-multiplication-theorem}
 \end{equation}
+%example
+\subsection{Example}
+In \ref{fig:vector-and-vector-operation-d10}, $\vec{v}=(2,1,-1)$, $\vec{w}=(-1,0,3)$, $3\vec{v}-2\vec{w}=?$
+\begin{center}
+    \import{fundamental/vector-and-vector-operation/diagram}{d10.tex}
+\end{center}
+\[
+    \begin{split}
+        3\vec{v}-2\vec{w} & =3(2,1,-1)-2(-1,0,3) \\
+                          & = (6,3,-3)-(-2,0,6)  \\
+                          & = (6+2,3-0,-3-6)     \\
+                          & = (8,3,-9)
+    \end{split}
+\]
+ပုံ\ref{fig:vector-and-vector-operation-d11} မှာ,hexagon ရဲ့ (0,0) ကနေ သူရဲ့ထောင့်တွေဆီကို သွားတဲ့ vecotr 6 ခု ကိုပေါင်းရင်, vector တစ်ခုကတော့ (1,0)
+\begin{center}
+    \import{fundamental/vector-and-vector-operation/diagram}{d11.tex}
+\end{center}
+\[
+    \begin{split}
+        \vec{v}+\vec{w}+\vec{x}+(-\vec{v})+(-\vec{w})+(-\vec{x})=0
+    \end{split}
+\]
+equation တွေကနေ$\vec{x}$ ကိုရှာခြင်း,
+\[
+    \begin{split}
+        (a)\hspace{1cm}\vec{x}-(3,2,1) & =(1,2,3)-3\vec{x}         \\
+        \vec{x}                        & =(3,2,1)+(1,2,3)-3\vec{x} \\
+        \vec{x}+3\vec{x}               & =(3+1,2+2,1+3)            \\
+        4\vec{x}                       & =(4,4,4)                  \\
+        \vec{x}                        & =\frac{1}{4}(4,4,4)       \\
+        \vec{x}                        & =(1,1,1)
+    \end{split}
+\]
+\[
+    \begin{split}
+        (b)\hspace{1cm}\vec{x}+2(\vec{v}+\vec{w}) & =-\vec{v}-3(\vec{x}-\vec{w})   \\
+        x+2\vec{v}+2\vec{w}                       & =-\vec{v}-3\vec{x}+3\vec{w}    \\
+        4\vec{x}                                  & =-3\vec{v}+\vec{w}             \\
+        \vec{x}                                   & =\frac{1}{4}(3\vec{v}+\vec{w})
+    \end{split}
+\]

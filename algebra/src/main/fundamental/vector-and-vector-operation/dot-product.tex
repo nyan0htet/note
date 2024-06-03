@@ -1,0 +1,35 @@
+\section{Dot Product}
+\subsection{မှတ်စု}
+\begin{itemize}
+    \item dimension တူတဲ့ vector အချင်းချင်းသာ dot product ရှာလို့ရတယ်။
+    \item dot product ရဲ့ရလဒ်က vector မဟုတ်ပဲ number ဖြစ်တယ်။
+    \item vector နှစ်ခုရဲ့ dot product သာရှိနိုင်တယ်။
+    \item $\vec{v}\cdot(\vec{w}\cdot\vec{x})$ တွင် $\vec{w}\cdot\vec{x}$ သည် number ဖြစ်တဲ့အတွက် $\vec{v}\cdot$number ကို dot produt လုပ်မရပါ။
+\end{itemize}
+\subsection{Definition}
+\begin{equation}
+    {\color{purple} \vec{v}\cdot\vec{w}\stackrel{def}{=}\vec{v}_1\vec{w}_1+\vec{v}_2\vec{w}_2+\dots+\vec{v}_n\vec{w}_n}
+    \label{eq:dot-product}
+\end{equation}
+\begin{center}
+    \import{fundamental/vector-and-vector-operation/diagram}{d14.tex}
+\end{center}
+\subsection{Theorem}
+\begin{equation}
+    {\color{purple} \begin{split}
+            (a)\hspace{15mm}\vec{v}\cdot\vec{w}          & =\vec{w}\cdot\vec{v}                     \\
+            (b)\hspace{6mm}\vec{v}\cdot(\vec{w}+\vec{x}) & =\vec{v}\cdot\vec{w}+\vec{v}\cdot\vec{x} \\
+            (c)\hspace{11mm}\vec{v}\cdot(c\vec{w})       & =c(\vec{v}\cdot\vec{w})
+        \end{split}}
+    \label{eq:dot-product-theorem}
+\end{equation}
+\subsection{Example}
+$(1,2,3)$နှင့်$(4,-3,2)$ တို့၏ dot product ကိုရှာလျှင်
+\[
+    \begin{split}
+        (1,2,3)\cdot(4,-3,2) & =1\cdot4+2\cdot(-3)+3\cdot2 \\
+                             & =4-6+6                      \\
+                             & =4
+    \end{split}
+\]
+$(1,2)\in\mathbb{R}^2$နှင့်$(2,5,3)\in\mathbb{R}^3$တို့သည် dimension မတူသောကြောင့် dot product ရှာလို့မရပါ။

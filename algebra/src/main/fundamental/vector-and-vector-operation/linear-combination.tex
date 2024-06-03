@@ -1,0 +1,71 @@
+\section{linear combination}
+\subsection{မှတ်စု}
+\begin{itemize}
+    \item $\vec{v}=(v_1,v_2,\dots,v_n)$ ထဲက $\vec{v}_1, \vec{v}_2, \vec{v}_n$ တွေက တစ်ခုနဲ့တစ်ခု သီးသန့်ဖြစ်နေတဲ့ vector space များဖြစ်တယ်။
+\end{itemize}
+\subsection{Definition}
+$c_1,c_2,\dots,c_k\in\mathbb{R}$ ဖြစ်ပြီး $\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k\in\mathbb{R}^n$ ပုံစံရှိတဲ့ vector ရဲ့ linear combination ကိုရှာချင်လျှင်,
+\begin{equation}
+    {\color{purple} c_1\vec{v}_1+c_2\vec{v}_2+\dots+c_k\vec{v}_k}
+    \label{eq:linear-combination}
+\end{equation}
+\subsection{Example}
+$\vec{v}=(1,2,3)$ ဟာ $\vec{v}_1=(1,1,1)$ နဲ့ $\vec{v}_2=(-1,0,1)$ တို့ linear combination လုပ်ထားတဲ့ vector ဖြစ်လားတွက်ချင်ရင်, definition အရ $\vec{v}=c_1\vec{v}_1+c_2\vec{v}_2$ ဖြစ်တယ်။
+\[
+    \begin{split}
+        (1,2,3) & =c_1(1,1,1)+c_2(-1,0,1)  \\
+        (1,2,3) & =(c_1-c_2,c_1+0,c_1+c_2) \\
+        (1,2,3) & =(c_1-c_2,c_1,c_1+c_2)
+    \end{split}
+\]
+vector space တစ်ခုချင်းစီကိုညီလိုက်မယ်ဆိုလျှင်
+\[
+    \begin{split}
+        (eq1)\hspace{5mm}c_1-c_2 & =1 \\
+        (eq2)\hspace{12.5mm}c_1     & =2 \\
+        (eq3)\hspace{5mm}c_1+c_2 & =3
+    \end{split}
+\]
+eq2 အရ $c_1$သည် 2 ဖြစ်ပြီး eq1 မှ $c_2$ ကိုရှာသော $2-c_2=1, c_2=1$ ဖြစ်တယ်။ eq3 တွင် အစားသွင်းကြည့်လျှင် $2+1=3$ သည်မှန်ကန်သည်။ ထို့ကြောင့် (1,1,1) နှင့် (-1,0,1) တို့၏ linear combination သည် (1,2,3) ဖြစ်သည်။
+
+(1,2,3) ဟာ (1,1,0) နှင့် (2,1,0) တို့ရဲ့ linear combination ဖြစ်သလား။
+\[
+    \begin{split}
+        (eq1)\hspace{5mm}c_1+2c_2 & =1 \\
+        (eq2)\hspace{7mm}c_1+c_2     & =2 \\
+        (eq3)\hspace{15.5mm}0 & \neq3
+    \end{split}
+\]
+eq3 အရ linear combination မဖြစ်နိုင်ပါ။
+\subsection{Standard Basic Vector}
+entries တွေက entry တစ်ခုသာ 1ဖြစ်နေပြီး ကျန်် entries တွေက သုညဖြစ်နေလျှင် အောက်ပါအတိုင်းဖော်ပြလို့ရတယ်။ $j=1,2,\dots,n$ ဖြစ်ပြီး $e_j\in\mathbb{R}_n$ ကိုဖော်ပြလျှင်
+\begin{equation}
+    e_j\stackrel{def}{=}(0,0,\dots,0,\underbrace{1}_{j-th\text{ entry}},0,\dots,0)
+\end{equation}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/vector-and-vector-operation/diagram}{d12.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/vector-and-vector-operation/diagram}{d13.tex}
+\end{minipage}
+
+standard basic vector ရဲ့ linear combination ကို \ref{eq:linear-combination} အတိုင်းတွက်လျှင်, $\vec{v}\in\mathbb{R}^n, \vec{v}=(\vec{v}_1,\vec{v}_2,\dots,\vec{v}_n)$ဖြစ်လျှင်
+\begin{equation}
+    {\color{purple} \vec{v}=\vec{v}_1e_1+\vec{v}_2e_2+\dots+\vec{v}_ne_n}
+\end{equation}
+
+\subsection{Example}
+
+$3\vec{e}_1-2\vec{e}_2+\vec{e}_3\in\mathbb{R}^3$ ၏ linear combination ကိုရှာလျှင်, 3D standard basic vector ဖြစ်တဲ့ အတွက် $\vec{e}_1=(1,0,0), \vec{e}_2=(0,1,0), \vec{e}_3=(0,0,1)$ ဖြစ်တယ်။
+\[
+    \begin{split}
+        3\vec{e}_1-2\vec{e}_2+\vec{e}_3& =3(1,0,0)-2(0,1,0)+(0,0,1) \\
+        &=(3,0,0)-(0,2,0)+(0,0,1) \\
+        &=(3+0+0,0-2+0,0-0+1) \\
+        &= (3,-2,1)
+    \end{split}
+\]
+$(3,5-2,-1)$ ကို $\vec{e}_1,\vec{e}_2,\vec{e}_3,\vec{e}_4\in\mathbb{R}^4$ ၏ linear combination ပုံစံဖြင့် $(3,5,-2,-1)=3\vec{e}_1+5\vec{e}_2-2\vec{e}_3-\vec{e}_4$ အတိုင်း ရေးသည်။

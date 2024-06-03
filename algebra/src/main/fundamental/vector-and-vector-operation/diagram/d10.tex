@@ -1,0 +1,58 @@
+\tdplotsetmaincoords{45}{145}
+\begin{tikzpicture}[tdplot_main_coords]
+    %grid for (6,3,-3)
+    \draw [-,very thin,cyan,dashed] (0,3,0) -- (6,3,0);
+    \draw [-,very thin,cyan,dashed] (0,3,0) -- (0,3,-3);
+    \draw [-,very thin,cyan,dashed] (0,3,-3) -- (6,3,-3);
+    \draw [-,very thin,cyan,dashed] (0,0,-3) -- (0,3,-3);
+    \draw [-,very thin,cyan,dashed] (6,0,0) -- (6,3,0);
+    \draw [-,very thin,cyan,dashed] (6,3,0) -- (6,3,-3);
+    %grid for (-2,0,6)
+    \draw [-,very thin,blue,dashed] (0,0,0) -- (-2,0,0);
+    \draw [-,very thin,blue,dashed] (0,0,0) -- (0,0,6);
+    \draw [-,very thin,blue,dashed] (0,0,6) -- (-2,0,6);
+    \draw [-,very thin,blue,dashed] (0,0,6) -- (0,0,6);
+    \draw [-,very thin,blue,dashed] (-2,0,0) -- (-2,0,0);
+    \draw [-,very thin,blue,dashed] (-2,0,0) -- (-2,0,6);
+    %grid for (2,1,-1) for original
+    \draw [-,very thin,green,dashed] (0,1,0) -- (2,1,0);
+    \draw [-,very thin,green,dashed] (0,1,0) -- (0,1,-1);
+    \draw [-,very thin,green,dashed] (0,1,-1) -- (2,1,-1);
+    \draw [-,very thin,green,dashed] (0,0,-1) -- (0,1,-1);
+    \draw [-,very thin,green,dashed] (2,0,0) -- (2,1,0);
+    \draw [-,very thin,green,dashed] (2,1,0) -- (2,1,-1);
+    %grid for (-1,0,3) for original
+    \draw [-,very thin,magenta,dashed] (0,0,0) -- (-1,0,0);
+    \draw [-,very thin,magenta,dashed] (0,0,0) -- (0,0,3);
+    \draw [-,very thin,magenta,dashed] (0,0,3) -- (-1,0,3);
+    \draw [-,very thin,magenta,dashed] (0,0,3) -- (0,0,3);
+    \draw [-,very thin,magenta,dashed] (-1,0,0) -- (-1,0,0);
+    \draw [-,very thin,magenta,dashed] (-1,0,0) -- (-1,0,3);
+    %draw axis value
+    \foreach \x in {-2,-1,1,2,3,...,6}
+        {
+            \draw (\x,0,0) -- (\x,0,0) node [above left] {$\x$};
+            \draw [-,thin] (\x,-0.05,0) -- (\x,0.05,0);
+        }
+    \foreach \y in {1,2,3}
+        {
+            \draw (0,\y,0) -- (0,\y,0) node [below] {$\y$};
+            \draw [-,thin] (-0.05,\y,0) -- (0.05,\y,0);
+        }
+    \foreach \z in {-3,-2,-1,1,2,3,4,5,6}
+        {
+            \draw (0,0,\z) -- (0,0,\z) node [left] {$\z$};
+            \draw [-,thin] (0,-0.05,\z) -- (0,0.05,\z);
+        }
+    %draw lines
+    \draw [->] (-2.5,0,0) -- (6.5,0,0) node[below left]{$x$};
+    \draw [->] (0,-0.5,0) -- (0,3.5,0) node[right]{$y$};
+    \draw [->] (0,0,-3.5) -- (0,0,6.5) node[above]{$z$};
+    \draw [->,very thick,cyan] (0,0,0) -- (6,3,-3) node[below right]{$3\vec{v}=(6,3,-3)$};
+    \draw [->,very thick,green] (0,0,0) -- (2,1,-1) node[below right]{$\vec{v}=(2,1,-1)$};
+    \draw [->,very thick,blue] (0,0,0) -- (-2,0,6) node[right]{$2\vec{w}=(-2,0,6)$};
+    \draw [->,very thick,magenta] (0,0,0) -- (-1,0,3) node[right]{$\vec{w}=(-1,0,3)$};
+    \draw node[left,black]{$0$} [->,very thick,orange] (-2,0,6) -- (6,3,-3) node[left]{$3\vec{v}-2\vec{w}=(8,3,-9)$};
+\end{tikzpicture}
+\captionof{figure}{{\footnotesize $3\vec{v}-2\vec{w}$}}
+\label{fig:vector-and-vector-operation-d10}

@@ -10,14 +10,24 @@
 \setmainfont{Pyidaungsu}
 %chapter text style
 \usepackage[Sonny]{fncychap}
+%section text style
+\usepackage{sectsty}
+\usepackage{xcolor}
+% Change section color
+\definecolor{oxfordblue}{rgb}{0.0, 0.13, 0.28}
+\definecolor{zinnwalditebrown}{rgb}{0.17, 0.09, 0.03}
+\sectionfont{\color{oxfordblue}}
+\subsectionfont{\color{zinnwalditebrown}}
 %tikz picture drawing
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
+\usetikzlibrary{calc, angles, quotes}
 %picture caption
 \usepackage{caption}
 \usepackage{amssymb}
 %math
 \usepackage{amsmath}
+\usepackage{fp}
 %margin note
 \usepackage{marginnote}
 \usepackage[dvipsnames]{xcolor}

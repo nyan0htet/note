@@ -1,0 +1,20 @@
+
+\begin{tikzpicture}
+    \draw[step=1,help lines, dashed,lightgray] (0,0) grid (2,2);
+    %draw axis value
+    \foreach \x in {0,1,2}
+        {%
+            \draw (\x,0) -- (\x,0) node [below] {$\x$};
+        }
+    \foreach \y in {1,2}
+        {%
+            \draw (0,\y) -- (0,\y) node [left] {$\y$};
+        }
+    %draw lines
+    \draw [->] (-0.5,0) -- (2.5,0) node[right]{$x$};
+    \draw [->] (0,-0.5) -- (0,2.5) node[above]{$y$};
+    \draw [->,orange,very thick] (0,0) -- (1,0) node[above right]{$\vec{e}_1=(1,0)$};
+    \draw [->,orange,very thick] (0,0) -- (0,1) node[above right]{$\vec{e}_2=(0,1)$};
+\end{tikzpicture}
+\captionof{figure}{{\footnotesize $\mathbb{R}^2$ vector}}
+\label{fig:vector-and-vector-operation-d1}
