@@ -1,0 +1,22 @@
+
+\begin{tikzpicture}[scale=2.0]
+    \clip (-2,-0.2) rectangle (2,2);
+    \draw[step=1,help lines, dashed,lightgray] (-1,-1) grid (1,1);
+    %draw axis value
+    \foreach \x in {0,1}
+        {%
+            \draw (\x,0) -- (\x,0) node [below] {$\x$};
+        }
+    \foreach \y in {1}
+        {%
+            \draw (0,\y) -- (0,\y) node [left] {$\y$};
+        }
+    %draw lines
+    \draw [->] (-1.5,0) -- (1.5,0) node[right]{$x$};
+    \draw [->] (0,-1.5) -- (0,1.5) node[above]{$y$};
+    \draw [->,blue,very thick] (0,0) -- (\fpeval{cos(40/180*pi)*1.2},\fpeval{sin(40/180*pi)*1.2}) node[above]{$\vec{v}$};
+    \draw [->,orange,very thick] (0,0) -- (\fpeval{cos(40/180*pi)},\fpeval{sin(40/180*pi)}) node[midway,above,sloped]{$\hspace{3mm}\hat{u}=\frac{\vec{v}}{\|\vec{v}\|}$};
+    \draw (0,0) [dashed,lightgray] circle (1);
+\end{tikzpicture}
+\captionof{figure}{{\footnotesize renormalizing a vector $\vec{v}\in\mathbb{R}^2$}}
+\label{fig:vector-and-vector-operation-d18}

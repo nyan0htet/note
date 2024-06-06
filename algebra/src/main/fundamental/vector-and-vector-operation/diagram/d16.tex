@@ -1,0 +1,21 @@
+\tdplotsetmaincoords{45}{105}
+\begin{tikzpicture}[tdplot_main_coords]
+    %grid
+    \draw [-,very thin,lightgray,dashed] (0,2,0) -- (1,2,0);
+    \draw [-,very thin,lightgray,dashed] (0,2,0) -- (0,2,3);
+    \draw [-,very thin,lightgray,dashed] (0,2,3) -- (1,2,3);
+    \draw [-,very thin,lightgray,dashed] (0,0,3) -- (0,2,3);
+    \draw [-,very thin,lightgray,dashed] (1,0,0) -- (1,2,0);
+    \draw [-,very thin,lightgray,dashed] (1,2,0) -- (1,2,3);
+    %draw lines
+    \draw [->] (-0.5,0,0) -- (1.5,0,0) node[below left]{$x$};
+    \draw [->] (0,-0.5,0) -- (0,2.5,0) node[right]{$y$};
+    \draw [->] (0,0,-0.5) -- (0,0,3.5) node[above]{$z$};
+    \draw [-] (0.8,1.6,0) -- (0.8,1.6,0.4);
+    \draw [-] (0.8,1.6,0.4) -- (1,2,0.4);
+    \draw node[left,blue]{$0$} [->,very thick,blue] (0,0,0) -- (1,2,0) node[right]{$(v_1,v_2,0)$};
+    \draw node[left,blue]{$0$} [->,very thick,blue] (1,2,0) -- (1,2,3) node[below right]{$\vec{v}=(0,0,v_3)$};
+    \draw node[left,blue]{$0$} [->,very thick,orange] (0,0,0) -- (1,2,3) node[midway,sloped,above]{$\vec{v}=(v_1,v_2,v_3)$};
+\end{tikzpicture}
+\captionof{figure}{{\footnotesize a vector $\vec{v}\in\mathbb{R}^3$}}
+\label{fig:vector-and-vector-operation-d16}

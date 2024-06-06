@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+    %draw lines
+    \draw [->] (-0.5,0) -- (3.5,0) node[right]{$x$};
+    \draw [->] (0,-0.5) -- (0,3) node[above]{$y$};
+    \draw [->,blue,thick] (0,0) -- node[midway,sloped,below]{$\|\vec{v}\|$} (2,0.5) node[below]{$\vec{v}$};
+    \draw [->,blue,thick] (2,0.5) -- node[midway,sloped,below]{$\|\vec{w}\|$} (3,2.5) node[below right]{$\vec{w}$};
+    \draw [->,orange,very thick] (0,0) -- node[midway,sloped,above]{$\|\vec{v}+\vec{w}\|$} (3,2.5) node[above]{$\vec{v}+\vec{w}\hspace{0.5cm}$};
+\end{tikzpicture}
+\captionof{figure}{{\footnotesize $\|\vec{v}+\vec{w}\|\le\|\vec{v}\|+\|\vec{w}\|$}}
+\label{fig:vector-and-vector-operation-d22}

@@ -1,0 +1,52 @@
+\tdplotsetmaincoords{45}{130}
+\begin{tikzpicture}[tdplot_main_coords,scale=1]
+    %grid
+    \draw [-,very thin,lightgray,dashed] (0,3,0) -- (-1,3,0);
+    \draw [-,very thin,lightgray,dashed] (0,3,0) -- (0,3,4);
+    \draw [-,very thin,lightgray,dashed] (0,3,4) -- (-1,3,4);
+    \draw [-,very thin,lightgray,dashed] (0,0,4) -- (0,3,4);
+    \draw [-,very thin,lightgray,dashed] (0,0,4) -- (-1,0,4);
+    \draw [-,very thin,lightgray,dashed] (-1,0,0) -- (-1,3,0);
+    \draw [-,very thin,lightgray,dashed] (-1,0,0) -- (-1,0,4);
+    \draw [-,very thin,lightgray,dashed] (-1,3,0) -- (-1,3,4);
+    \draw [-,very thin,lightgray,dashed] (-1,3,4) -- (-1,0,4);
+    %grid
+    \draw [-,very thin,lightgray,dashed] (0,2,0) -- (1,2,0);
+    \draw [-,very thin,lightgray,dashed] (0,2,0) -- (0,2,-1);
+    \draw [-,very thin,lightgray,dashed] (0,2,-1) -- (1,2,-1);
+    \draw [-,very thin,lightgray,dashed] (0,0,-1) -- (0,2,-1);
+    \draw [-,very thin,lightgray,dashed] (0,0,-1) -- (1,0,-1);
+    \draw [-,very thin,lightgray,dashed] (1,0,0) -- (1,2,0);
+    \draw [-,very thin,lightgray,dashed] (1,0,0) -- (1,0,-1);
+    \draw [-,very thin,lightgray,dashed] (1,2,0) -- (1,2,-1);
+    \draw [-,very thin,lightgray,dashed] (1,2,-1) -- (1,0,-1);
+    %draw axis value
+    \foreach \x in {-1,0,1}
+        {
+            \draw (\x,0,0) -- (\x,0,0) node [above left] {$\x$};
+            \draw [-,thin] (\x,-0.05,0) -- (\x,0.05,0);
+        }
+    \foreach \y in {1,2,3}
+        {
+            \draw (0,\y,0) -- (0,\y,0) node [below] {$\y$};
+            \draw [-,thin] (-0.05,\y,0) -- (0.05,\y,0);
+        }
+    \foreach \z in {-1,1,2,3,4}
+        {
+            \draw (0,0,\z) -- (0,0,\z) node [left] {$\z$};
+            \draw [-,thin] (0,-0.05,\z) -- (0,0.05,\z);
+        }
+    %draw lines
+    \draw [->] (-1.5,0,0) -- (2.5,0,0) node[below left]{$x$};
+    \draw [->] (0,-0.5,0) -- (0,3.5,0) node[right]{$y$};
+    \draw [->] (0,0,-1.5) -- (0,0,4.5) node[above]{$z$};
+    \draw  [->, thick,blue] (0,0,0) -- (-1,3,4) node[right]{$\vec{w}=(-1,3,4)$};
+    \draw [->, thick,blue] (0,0,0) -- (1,2,-1) node[right]{$\vec{v}=(1,2,-1)$};
+    \draw [->,very thick,orange] (1,2,-1) -- node[midway,below,sloped]{$\vec{v}-\vec{w}$} (-1,3,4);
+    \coordinate (O) at (0,0);
+    \coordinate (V) at (-1,3,4);
+    \coordinate (W) at (1,2,-1);
+    \pic [draw, "$\theta$", angle eccentricity=1.2, angle radius=8mm] {angle = W--O--V};
+\end{tikzpicture}
+\captionof{figure}{{\footnotesize $\vec{v},\vec{w}, and \hspace{1mm}\vec{v}-\vec{w}\in\mathbb{R}^3$}}
+\label{fig:vector-and-vector-operation-d23}

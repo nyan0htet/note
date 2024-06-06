@@ -1,1 +1,204 @@
-\section{Vector Length}
+\section{Vector Length $\|v\|$}
+\subsection{မှတ်စု}
+\begin{itemize}
+    \item vector ရဲ့ tail က standard basic point ဖြစ်နေမှသာတွက်လို့ရမယ်။
+    \item vector က origin ကမစလျှင် eq\ref{eq:standard-position} အတိုင်းပြောင်းပါ။
+    \item $(v_1,v_2)$ ရဲ့ တစ်စိတ်တစ်ပိုင်း component $v_1$ ကို $|v_1|$ ပုံစံဖော်ပြနိုင်တယ်။
+\end{itemize}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/vector-and-vector-operation/diagram}{d15.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/vector-and-vector-operation/diagram}{d16.tex}
+\end{minipage}
+
+In Fig \ref{fig:vector-and-vector-operation-d15},$\vec{v}=(v_1,v_2)\in\mathbb{R}^2$ ကို $\vec{v}=(v_1,0)+(0,v_2)$ ကနေတွက်ထုတ်ထားတာဖြစ်တယ်။
+\[
+    \begin{split}
+        \|\vec{v}\| & =\sqrt{\|(v_1,0)\|^2+\|(0,v_2)\|^2} \\
+                    & =\sqrt{|v_1|^2+\|v_2|^2}            \\
+                    & =\sqrt{v_1^2+v_2^2}                 \\
+                    & =\sqrt{(v_1,v_2)\cdot(v_1,v_2)}     \\
+                    & =\sqrt{\vec{v}\cdot\vec{v}}
+    \end{split}
+\]
+
+In Fig \ref{fig:vector-and-vector-operation-d16},$\vec{v}=(v_1,v_2,v_3)\in\mathbb{R}^3$ ကို $\vec{v}=(v_1,v_2,0)+(0,0,v_3)$ ကနေတွက်ထုတ်ထားတာဖြစ်တယ်။
+\[
+    \begin{split}
+        \|\vec{v}\| & =\sqrt{\|(v_1,v_2,0)\|^2+\|(0,0,v_3)\|^2} \\
+                    & =\sqrt{(\sqrt{v_1^2+v_2^2})^2+\|v_3\|^2}  \\
+                    & =\sqrt{v_1^2+v_2^2+v_3^2}                 \\
+                    & =\sqrt{(v_1,v_2,v_3)\cdot(v_1,v_2,v_3)}   \\
+                    & =\sqrt{\vec{v}\cdot\vec{v}}
+    \end{split}
+\]
+
+\subsection{Definition}
+$\vec{v}=(v_1,v_2,\dots,v_n)\in\mathbb{R}^n$ ၏ length ကိုရှာချင်ရင်
+\begin{equation}
+    {\color{purple} \|\vec{v}\|\stackrel{def}{=}\sqrt{\vec{v}\cdots\vec{v}}=\sqrt{v_1^2+v_2^2+\dots+v_n^2}}
+\end{equation}
+
+\subsection{Example}
+(2,-5,4,6) ၏ length ကိုရှာလျှင်
+
+\[
+    \begin{split}
+        \|(2,-5,4,6)\| & = \sqrt{2^2+(-5)^2+4^2+6^2} \\
+                       & = \sqrt{81}                 \\
+                       & = 9
+    \end{split}
+\]
+
+$(cos(\theta),sin(\theta))$ ၏ length ကိုရှာလျှင်
+
+\[
+    \begin{split}
+        \|(cos(\theta),sin(\theta))\| & =\sqrt{{cos}^2(\theta)+{sin}^2(\theta)} \\
+                                      & =\sqrt{1}                               \\
+                                      & =1
+    \end{split}
+\]
+\begin{center}
+    \import{fundamental/vector-and-vector-operation/diagram}{d17.tex}
+\end{center}
+\[
+    \begin{split}
+        \|(1,1,1)\|=\sqrt{1^2+1^2+1^2}=\sqrt{3}
+    \end{split}
+\]
+
+\subsection{Theorem}
+
+$\vec{v}\in\mathbb{R}^n$, $c\in\mathbb{R}$ ဖြစ်လျှင်
+\begin{equation}
+    {\color{purple} \begin{split}
+            (a)\hspace{5mm}\|c\vec{v}\|  & =|c|\cdot\|\vec{v}\|                                            \\
+            (b)\hspace{6.5mm}\|\vec{v}\| & > 0,\text{\color{black} with equality if and only if }\vec{v}=0
+        \end{split}}
+\end{equation}
+
+\subsection{Unit Vector ($\hat{u}=1$)}
+
+unit vector $\hat{u}$ ရဲ့ length ကတော့ 1ရှိပါတယ်။ တစ်ခြား vector တွေကနေ unit vector ဖြစ်အောင် scaling လုပ်တာကို normalization လုပ်ခြင်းလို့ခေါ်ပါတယ်။
+direction က မူရင်း vector ၏ direction အတိုင်းသာဖြစ်တယ်။ $\hat{u}\in\mathbb{R}^2$ ကတော့ unit circle ဖြစ်ပြီး $\hat{u}\in\mathbb{R}^3$ ကတော့ unit sphere ဖြစ််တယ်။
+$\vec{v}\in\mathbb{R}^n$ဖြစ်လျှင်
+\begin{equation}
+    {\color{purple} \begin{split}
+            (a)\hspace{5mm}\hat{u}     & =\frac{\vec{v}}{\|\vec{v}\|} \\
+            (b)\hspace{2mm}\|\hat{u}\| & =1
+        \end{split}}
+\end{equation}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/vector-and-vector-operation/diagram}{d18.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/vector-and-vector-operation/diagram}{d19.tex}
+\end{minipage}
+
+$\vec{v}=(3,4)$ ကို unit vector သို့ scaling လုပ်လျှင်,
+\[
+    \begin{split}
+        \hat{u}\quad of\quad\vec{v}      & =\frac{\vec{v}}{\|\vec{v}\|}             \\
+                                         & =\frac{(3,4)}{\sqrt{3^2+4^2}}            \\
+                                         & =\frac{(3,4)}{5}                         \\
+                                         & =(\frac{3}{5},\frac{4}{5})               \\
+        \|\hat{u}\|\quad of \quad\vec{v} & = \sqrt{(\frac{3}{5})^2+(\frac{4}{5})^2} \\
+                                         & = \sqrt{\frac{9}{25}+\frac{16}{25}}      \\
+                                         & = \sqrt{\frac{25}{25}}                   \\
+                                         & = \sqrt{1}                               \\
+                                         & = 1
+    \end{split}
+\]
+\begin{center}
+
+    \import{fundamental/vector-and-vector-operation/diagram}{d20.tex}
+\end{center}
+
+\subsection{Cauchy-Schwarz Inequality}
+$\vec{v}\in\mathbb{R}^n$ နှင့် $\vec{w}\in\mathbb{R}^n$ တို့သည် linearly dependent ဖြစ်နေမှသာလျှင် Cauchy Inequality ကသုံးလို့ရတယ်။ $\vec{v}$ ရဲ့ head က $\vec{w}$ ၏ tail မှာဆက်နေလျင်, or, $\vec{w}$ ရဲ့ head က $\vec{v}$ ၏ tail မှာဆက်နေမှသာ Cauchy Inequality ကမှန်ကန်တယ်။
+\begin{equation}
+    {\color{purple} \begin{split}
+            |\vec{v}\cdot\vec{w}| & \le\|\vec{v}\|\|\vec{w}\|
+        \end{split}}
+\end{equation}
+$\vec{v}=(1,2), \vec{w}=(3,4),$
+\[
+    \begin{split}
+        \vec{v}\cdot\vec{w}   & =(1,2)\cdot(3,4) \\
+                              & =3+8             \\
+                              & =11              \\
+        |\vec{v}\cdot\vec{w}| & =|11|            \\
+                              & =11              \\
+        \|\vec{v}\|           & =\sqrt{1^2+2^2}  \\
+                              & =\sqrt{5}          \\
+        \|\vec{w}\|           & =\sqrt{3^2+4^2}  \\
+                              & =\sqrt{25}       \\
+                              & =5 \\
+        \|\vec{v}\|\|\vec{w}\|&=5\sqrt{5} \\
+        & \approx 11.028 \\
+        |\vec{v}\cdot\vec{w}|&\le\|\vec{v}\|\|\vec{w}\|
+    \end{split}
+\]
+
+\subsection{Triangle Inequality}
+တြိဂံတစ်ခု၏ အနားတစ်ခုသည် ကျန်အနားနှစ်ခု ပေါင်းခြင်းထက်ငယ် သို့မဟုတ် ပေါင်းခြင်းနှင့်ညီနိုင်သည်။
+\begin{equation}
+    \begin{split}
+        \vec{x}&=\vec{v}\cdot\vec{w} \\
+        \|\vec{x}\|&\le\|\vec{v}\|+\|\vec{w}\| \\
+        {\color{purple} \|\vec{v}\cdot\vec{w}\|}&{\color{purple} \le\|\vec{v}\|+\|\vec{w}\|}
+    \end{split}
+\end{equation}
+
+\begin{center}
+    \import{fundamental/vector-and-vector-operation/diagram}{d21.tex}
+\end{center}
+
+\subsection{The Angle between Vector}
+$\vec{v},\vec{w}\in\mathbb{R}^n$ နှစ်ခုကြားက angle $\theta$ ကိုရှာချင်လျှင်, Figure\ref{fig:vector-and-vector-operation-d5}အရ $\vec{v}$ နှင့် $\vec{w}$ ကိုဆက်ထားတဲ့ vector လိုအပ်တဲ့အတွက် vector substraction လုပ်မှသာ ရနိုင်တယ်။ ချိတ်ဆက်ထားတဲ့ vector သည် $\vec{v}-\vec{w}$ ဖြစ်လာသည်။
+
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/vector-and-vector-operation/diagram}{d22.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/vector-and-vector-operation/diagram}{d23.tex}
+\end{minipage}
+
+law of cosines အရ $\theta,\vec{v},\vec{w},\vec{v}-\vec{w}$ တို့ကို
+\subsection{Definition}
+\begin{equation}
+    \begin{split}
+        \|\vec{v}-\vec{w}\|^2&=\|\vec{v}\|^2+\|\vec{w}\|^2-2\|\vec{v}\|\|\vec{w}\|\cos(\theta) \\
+        \|\vec{v}-\vec{w}\|^2&=(\sqrt{(\vec{v}-\vec{w})^2})^2 \\
+        &=(\vec{v}-\vec{w})^2 \\
+        &=(\vec{v}-\vec{w})\cdot(\vec{v}-\vec{w}) \\
+        &=\vec{v}\cdot\vec{v}-\vec{v}\cdot\vec{w}-\vec{v}\cdot\vec{w}+\vec{w}\cdot\vec{w} \\
+        &=\vec{v}^2-2(\vec{v}\cdot\vec{w})+\vec{w}^2 \\
+        &=\|\vec{v}\|^2-2(\vec{v}\cdot\vec{w})+\|\vec{w}\|^2 \\
+        \|\vec{v}\|^2-2(\vec{v}\cdot\vec{w})+\|\vec{w}\|^2&=\|\vec{v}\|^2+\|\vec{w}\|^2-2\|\vec{v}\|\|\vec{w}\|\cos(\theta)  \\
+        \vec{v}\cdot\vec{w}&=\|\vec{v}\|\|\vec{w}\|\cos(\theta) \\
+        {\color{purple} cos(\theta)}&={\color{purple} \frac{\vec{v}\cdot\vec{w}}{\|\vec{v}\|\|\vec{w}\|}} \\
+        {\color{purple} \theta}&={\color{purple} cos^{-1}(\frac{\vec{v}\cdot\vec{w}}{\|\vec{v}\|\|\vec{w}\|})}
+    \end{split}
+\end{equation}
+\subsection{Example}
+$\vec{v}=(1,2),\vec{w}=(3,4)$ တို့ကြားက angle $\theta$ ကိုရှာလျှင်
+\[
+    \begin{split}
+        \theta&=cos^{-1}(\frac{(1,2)\cdot(3,4)}{\|(1,2)\|\|(3,4)\|}) \\
+        &=cos^{-1}(\frac{9}{5\sqrt{5}}) \\
+        &\approx 0.1799 radian \\
+        &\approx 10.30^{\circ}
+    \end{split}
+\]

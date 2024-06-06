@@ -16,13 +16,13 @@
     \coordinate (A) at (0,0);
     \coordinate (B) at (1,0);
     \coordinate (C) at (\fpeval{cos(40/180*pi)},\fpeval{sin(40/180*pi)});
+    \pic [draw, "$\theta$", angle eccentricity=1.2, angle radius=8mm] {angle = B--A--C};
     \draw [->] (-1.5,0) -- (1.5,0) node[right]{$x$};
     \draw [->] (0,-1.5) -- (0,1.5) node[above]{$y$};
     \draw [->,blue,very thick] (0,0) -- (1,0) node[above right]{$\vec{v}=(1,0)$};
     \draw [->,blue,very thick] (0,0) -- (\fpeval{cos(40/180*pi)},\fpeval{sin(40/180*pi)}) node[above]{$\vec{w}=(cos(\theta),sin(\theta))$};
     \draw [-,blue,dashed] (\fpeval{cos(40/180*pi)},0) -- (\fpeval{cos(40/180*pi)},\fpeval{sin(40/180*pi)});
     \draw (0,0) [dashed,lightgray] circle (1);
-    \pic [draw, "$\theta$", angle eccentricity=1.2, angle radius=8mm] {angle = B--A--C};
 \end{tikzpicture}
 \captionof{figure}{{\footnotesize $\vec{v}\cdot\vec{w}=1cos(\theta)+0sin(\theta)$}}
 \label{fig:vector-and-vector-operation-d14}
