@@ -1,0 +1,42 @@
+\subsection{projection အရိပ်ကျခြင်း $P(\hat{u})\vec{v}$}
+\begin{equation}
+    {\color{purple}\begin{split}
+        \hat{u}&=\frac{\vec{v}}{\|\vec{v}\|} \\
+        P_u(\hat{u})&=\hat{u}{\hat{u}}^T \\
+        P_u(v)&=P_u(\hat{u})\vec{v}
+    \end{split}}
+\end{equation}
+project a vector onto a line defined by {\color{red}{\large its}} unit vector. $\vec{v}=(1,2,3)$ ဖြစ်ပြီး unit vector ၏ line ပေါ် projection ကျတာကို ရှာလျှင်
+$\vec{v}$ ၏ unit vector $\hat{u}$ ကိုရှာလျှင်
+\[
+    \begin{split}
+        \|\vec{v}\|&=\sqrt{1^2+2^2+3^2} \\
+        &=\sqrt{14} \\
+        \hat{u}&=\frac{1}{\sqrt{14}}(1,2,3) \\
+        P_u(\hat{u})&=\hat{u}{\hat{u}}^T \\
+        &=(\frac{1}{\sqrt{14}}\mthreeone{1}{2}{3})(\frac{1}{\sqrt{14}}\monethree{1}{2}{3}) \\
+        &=\frac{1}{14}\mthreethree{1 \times 1}{2 \times 1}{3 \times 1}{1 \times 2}{2 \times 2}{3 \times 2}{1 \times 3}{2 \times 3}{3 \times 3} \\
+        &=\frac{1}{14}\mthreethree{1}{2}{3}{2}{4}{6}{3}{6}{9} \\
+        P_u(\vec{v})&=P_u(\hat{u})\vec{v} \\
+        &=\frac{1}{14}\mthreethree{1}{2}{3}{2}{4}{6}{3}{6}{9}\mthreeone{1}{2}{3} \\
+        &=\frac{1}{14}\mthreeone{1\times 1+2\times 2+3\times 3}{2\times 1+4\times 2+6\times 3}{3\times 1+6\times 2+9\times 3} \\
+        &=\frac{1}{14}\mthreeone{14}{28}{52} \\
+        &=\mthreeone{1}{2}{3} \text{(သူ့ရဲ့$\hat{u}$အပေါ်သူ projection ဖြစ်တော့ မပြောင်းလဲ)}
+    \end{split}
+\]
+project a vector onto a line defined by unit vector of another vector. $\vec{v}=(1,2,3)$ ဖြစ်ပြီး $\vec{w}=(1,3,2)$ ၏ line ပေါ် projection ကျတာကို ရှာလျှင်
+$\vec{w}$ ၏ unit vector $\hat{u}$ ကိုရှာလျှင်
+\[
+    \begin{split}
+        \|\vec{w}\|&=\sqrt{1^2+3^2+2^2} \\
+        &=\sqrt{14} \\
+        \hat{u}_{\vec{w}}&=\frac{1}{\sqrt{14}}(1,3,2) \\
+        P_u(\vec{w})\vec{v}&=\frac{1}{14}\mthreeone{1}{3}{2}\monethree{1}{3}{2}\mthreeone{1}{2}{3} \\
+        &=\frac{1}{14}\mthreethree{1}{3}{2}{3}{9}{6}{2}{6}{4}\mthreeone{1}{2}{3} \\
+        &=\frac{1}{14}\mthreeone{13}{39}{26} \\
+        &=\mthreeone{\frac{13}{14}}{\frac{39}{14}}{\frac{26}{14}}
+    \end{split}
+\]
+\begin{center}
+    \import{fundamental/matrix-and-matrix-operation/diagram}{d5.tex}
+\end{center}

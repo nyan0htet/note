@@ -1,0 +1,38 @@
+\section{Matrix Transpose $\m{A}^T$}
+$\m{A}\in\m{M}_{m,n}$ သည် $m \times n$ matrix ဖြစ်ရင် $\m{A}$ ၏ transpose ဖြစ်တဲ့ $\m{A}^T$ သည် $n \times m$ ဖြစ်တယ်။ $\m{A}$ ၏ entry $a_{i,j}$ သည် $\m{A}^T$ ၏ entry $a_{j,i}$ ဖြစ်လာမည်။
+\subsection{Definition}
+\begin{equation}
+    {\color{purple}
+    \m{A}=\mtwothree{a_{i_1,j_1}}{a_{i_2,j_1}}{{\color{blue} a_{i_1,j_2}}}{a_{i_2,j_2}}{a_{i_1,j_3}}{a_{i_2,j_3}}\Rightarrow\m{A}^T=\mthreetwo{a_{j_1,i_1}}{{\color{blue} a_{j_2,i_1}}}{a_{j_3,i_1}}{a_{j_1,i_2}}{a_{j_2,i_2}}{a_{j_3,i_2}}
+    }
+\end{equation}
+\subsection{Theorem}
+\begin{equation}
+    {\color{purple} \begin{split}
+        (a)\hspace{7.5mm}{(\m{A}^T)}^T&=\m{A} \\
+        (b)\hspace{3mm}(\m{A}+\m{B})^T&=\m{A}^T+\m{B}^T \\
+        (c)\hspace{7mm}(\m{A}\m{B})^T&=\m{B}^T\m{A}^T \\
+        (d)\hspace{7.5mm}(c\m{A})^T&=c\m{A}^T
+    \end{split}}
+\end{equation}
+\subsection{Example}
+$\m{A}=\mtwotwo{1}{3}{2}{4},\m{B}=\mtwothree{-1}{0}{1}{1}{1}{0}$ ဖြစ်လျှင်
+\[
+    \begin{split}
+        \m{A}^T&=\mtwotwo{1}{2}{3}{4} \\
+        \m{B}^T&=\mthreetwo{-1}{1}{1}{0}{1}{0} \\
+        {(\m{A}\m{B})}^T&={\left(\mtwotwo{1}{3}{2}{4}\mtwothree{-1}{0}{1}{1}{1}{0}\right)}^T \\
+        &=\mtwothree{-1}{-3}{3}{7}{1}{3}^T \\
+        &=\mthreetwo{-1}{3}{1}{-3}{7}{3} \\
+        \m{B}^T\m{A}^T&=\mthreetwo{-1}{1}{1}{0}{1}{0}\mtwotwo{1}{2}{3}{4} \\
+        &=\mthreetwo{-1}{3}{1}{-3}{7}{3}
+    \end{split}
+\]
+
+\begin{equation}
+    {\color{purple} {(\vec{v})}^T\vec{w}=\begin{bmatrix}
+        v_1 & v_2 & \dots & v_n
+    \end{bmatrix}\begin{bmatrix}
+        w_1 \\ w_2 \\ \vdots \\ w_n
+    \end{bmatrix}=v_1w_1+v_2w_2+\dots+v_nw_n=\vec{v} \cdot \vec{w}}
+\end{equation}

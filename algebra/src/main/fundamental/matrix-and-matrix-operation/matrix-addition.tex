@@ -1,0 +1,59 @@
+\section{Matrix addition ($\m{A}+\m{B}$)}
+\subsection{Definition}
+$\m{A},\m{B}\in\m{M}_{m,n}$သည် matrix, $c\in\m{R}$သည် scalar, $1 \le i \le m,1 \le j \le n$ ဖြစ်လျှင်
+\begin{equation}
+    {\color{purple} \begin{split}
+        (a)\hspace{3mm}[\m{A}+\m{B}]_{i,j}&=a_{i,j}+b_{i,j} \\
+        (b)\hspace{8.25mm}[cA]_{i,j}&=ca_{i,j}
+    \end{split}}
+\end{equation}
+$\m{A},\m{B}\in\m{M}_{m,n}$ ဖြစ်လျှင်,
+\[
+    \begin{split}
+        \m{A}+\m{B}&=\begin{bmatrix}
+            a_{1,1} & a_{1,2} & \dots & a_{1,n} \\[4pt]
+            a_{2,1} & a_{2,2} & \dots & a_{2,n} \\[4pt]
+            \vdots & \vdots & \ddots & \vdots \\[4pt]
+            a_{m,1} & a_{m,2} & \dots & a_{m,n}
+        \end{bmatrix}+\begin{bmatrix}
+            b_{1,1} & b_{1,2} & \dots & b_{1,n} \\[4pt]
+            b_{2,1} & b_{2,2} & \dots & b_{2,n} \\[4pt]
+            \vdots & \vdots & \ddots & \vdots \\[4pt]
+            b_{m,1} & b_{m,2} & \dots & b_{m,n}
+        \end{bmatrix} \\
+        &=\begin{bmatrix}
+            a_{1,1}+b_{1,1} & a_{1,2}+b_{1,2} & \dots & a_{1,n}+b_{1,n} \\[4pt]
+            a_{2,1}+b_{2,1} & a_{2,2}+b_{2,2} & \dots & a_{2,n}+b_{2,n} \\[4pt]
+            \vdots & \vdots & \ddots & \vdots \\[4pt]
+            a_{m,1}+b_{m,1} & a_{m,2}+b_{m,2} & \dots & a_{m,n}+b_{m,n}
+        \end{bmatrix}
+    \end{split}
+\]
+\subsection{Theorem}
+$\m{A},\m{B},\m{C}\in\m{M}_{m,n}$ နှင့် $c,d\in\m{R}$ ဖြစ်လျှင်
+\begin{equation}
+    {\color{purple} \begin{split}
+        (a)\hspace{10.5mm}\m{A}+\m{B}&=\m{B}+\m{A} \\
+        (b)\hspace{1mm}(\m{A}+\m{B})+\m{C}&=\m{A}+(\m{B}+\m{C}) \\
+        (c)\hspace{6.25mm}c(\m{A}+\m{B})&= c\m{A}+c\m{B} \\
+        (d)\hspace{6.5mm}(c+d)\m{A}&=c\m{A}+d\m{A} \\
+        (e)\hspace{11mm}c(d\m{A})&=(cd)\m{A}
+    \end{split}}
+\end{equation}
+\subsection{Example}
+$\amtwotwo{1}{2}{3}{-1}{A}{4},\amtwotwo{2}{0}{1}{1}{B}{4}$ and $\amtwothree{1}{0}{0}{-1}{1}{1}{C}{4}$ဖြစ်လျှင်, \\[1ex]
+$\m{A}+\m{B}$ ကိုရှာလျှင်
+\[
+    \begin{split}
+        \m{A}+\m{B}&=\mtwotwo{1+2}{2+0}{3+1}{-1+1} \\[1ex]
+        &=\mtwotwo{3}{2}{4}{0}
+    \end{split}
+\]
+$2\m{A}-3\m{B}$ ကိုရှာလျှင်
+\[
+    \begin{split}
+        2\m{A}-3\m{B}&=\mtwotwo{2}{4}{6}{-2}-\mtwotwo{6}{0}{3}{3} \\
+        &= \mtwotwo{2-6}{4-0}{6-3}{-2-3} \\
+        &= \mtwotwo{-4}{4}{3}{-5}
+    \end{split}
+\]

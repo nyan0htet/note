@@ -1,0 +1,77 @@
+\section{Linear Transformation $T(\vec{v})$}
+\subsection{မှတ်စု}
+\begin{itemize}
+    \item linear transformation မှာ rotate, stretch, shrink, reflect ဖြစ်တာတွေပါဝင်တယ်။
+    \item vector နှင့် matrix တွေကို linear transformation လုပ်လို့ရတယ်။
+\end{itemize}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/matrix-and-matrix-operation/diagram}{d1.tex}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \import{fundamental/matrix-and-matrix-operation/diagram}{d2.tex}
+\end{minipage}
+\subsection{Definition}
+$e_1,e_2,\dots,e_n$ သည် standard basic vector ဖြစ်လျှင် 
+\begin{equation}
+    {\color{purple} \begin{split}
+        (a)\hspace{8mm} \vec{v}&=v_1e_1+v_2e_2+\dots+v_ne_n \\
+        (b)\hspace{3mm} T(\vec{v})&=T(v_1e_1+v_2e_2+\dots+v_ne_n) \\
+        &=v_1T(e_1)+v_2T(e_2)++v_nT(e_n)
+    \end{split}}
+\end{equation}
+\subsection{Theorem}
+$T:\m{R}^n\rightarrow\m{R}^m$ ဖြစ်တဲ့ function နှင့် linear transformation ဖြစ်လျှင်
+\begin{equation}
+    {\color{purple} \begin{split}
+        (a)\hspace{5mm}T(\vec{v}+\vec{w})&=T(\vec{v})+T(\vec{w}) \\
+        (b)\hspace{10.5mm}T(c\vec{v})&=cT(\vec{v})
+    \end{split}}
+    \label{eq:linear-transformation}
+\end{equation}
+\subsection{Example}
+function တွေသည် linear transformation ဖြစ်သည်ကိုရှာလျှင်,
+
+$T(v_1,v_2)=(1+v_1,2+v_2)$ function သည် linear transformation ဖြစ်သည်ကိုရှာလျှင် eq\ref{eq:linear-transformation} (b) အရ $v_1=0,v_2=0,c=2$ ကို အစားထိုးကြည့်လျှင်,
+\[
+    \begin{split}
+        T(c\vec{v})&=T(c(v_1,v_2)) \\
+        &=T(2(0,0)) \\
+        &=T(0,0) \\
+        &=(1+0,2+0) \\
+        &=(12,2) \\
+        cT(\vec{v})&=cT(v_1,v_2) \\
+        &=2(1,2) \\
+        &=(2,4) \\
+        T(c\vec{v})&\ne cT(\vec{v}) \text{ (linear transformation function မဟုတ်ပါ)}
+    \end{split}
+\]
+$T(v_1,v_2)=(v_1-v_2,v_1+v_2)$ function သည် linear transformation ဖြစ်သည်ကိုရှာလျှင် eq\ref{eq:linear-transformation} (b) အရ $v_1=1,v_2=1,c=2$ ကို အစားထိုးကြည့်လျှင်,
+\[
+    \begin{split}
+        T(c\vec{v})&=T(c(v_1-v_2,v_1+v_2)) \\
+        &=T(2(1,1)) \\
+        &=T(2,2) \\
+        &=(2-2,2+2) \\
+        &=(0,4) \\
+        cT(\vec{v})&=cT(v_1-v_2,v_1+v_2) \\
+        &=2(1-1,1+1) \\
+        &=2(0,2) \\
+        &=(0,4) \\
+        T(c\vec{v})&\ne cT(\vec{v}) \text{ (linear transformation function ဖြစ်သည်)}
+    \end{split}
+\]
+$\m{R}^2 \rightarrow\m{R}^2$ linear transformation $T(e_1)=(1,1),T(e_2)=(-1,1)$ ဖြစ်ပြီး $T(2,3)$ ကိုရှာလျှင်
+\[
+    \begin{split}
+        (2,3)&=2e_1+3e_2 \\
+        T(\vec{v})&=T(v_1e_1+v_2e_2) \\
+        &=T(2e_1+3e_2) \\
+        &=2T(e_1)+3T(e_2) \\
+        &=2(1,1)+3(-1,1) \\
+        &=(2,2)+(-3,3) \\
+        &=(-1,5)
+    \end{split}
+\]

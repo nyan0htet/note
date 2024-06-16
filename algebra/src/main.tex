@@ -31,6 +31,17 @@
 %margin note
 \usepackage{marginnote}
 \usepackage[dvipsnames]{xcolor}
+%function
+\newcommand{\m}[1]{\mathbb{#1}}
+\newcommand{\monethree}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}
+\newcommand{\mtwotwo}[4]{\begin{bmatrix} #1 & #3\\[6pt] #2 & #4 \end{bmatrix}}
+\newcommand{\mtwothree}[6]{\begin{bmatrix} #1 & #3 & #5\\[6pt] #2 & #4 & #6 \end{bmatrix}}
+\newcommand{\mtwofour}[8]{\begin{bmatrix} #1 & #3 & #5 & #7 \\[6pt] #2 & #4 & #6 & #8 \end{bmatrix}}
+\newcommand{\mthreeone}[3]{\begin{bmatrix} #1 \\[6pt] #2 \\[6pt] #3 \end{bmatrix}}
+\newcommand{\mthreetwo}[6]{\begin{bmatrix} #1 & #4 \\[6pt] #2 & #5 \\[6pt] #3 & #6 \end{bmatrix}}
+\newcommand{\mthreethree}[9]{\begin{bmatrix} #1 & #4 & #7 \\[6pt] #2 & #5 & #8 \\[6pt] #3 & #6 & #9 \end{bmatrix}}
+\newcommand{\amtwotwo}[6]{\mathbb{#5}=\begin{bmatrix} #1 & #3\\[#6pt] #2 & #4 \end{bmatrix}}
+\newcommand{\amtwothree}[8]{\mathbb{#7}=\begin{bmatrix} #1 & #3 & #5\\[#8pt] #2 & #4 & #6 \end{bmatrix}}
 \begin{document}
 \tableofcontents
 \import{./front}{index.tex}

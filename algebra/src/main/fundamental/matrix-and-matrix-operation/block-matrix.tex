@@ -1,0 +1,63 @@
+\section{Block Matrix}
+\subsection{မှတ်စု}
+\begin{itemize}
+    \item large matrix တွေကို matrix operation လုပ်ဖို့လွယ်ကူအောင်သုံးတယ်။
+    \item large matrix ကြီးကို block လေးတွေအလိုက်ခွဲရင် submatrices တွေရလာတယ်။
+\end{itemize}
+\subsection{Example}
+\[
+    \begin{split}
+        \m{A}=\left[\begin{array}{c   c   c   c   c   c}
+                            1 & 0 & 0 & 1 & 0  & 0  \\
+                            0 & 1 & 0 & 0 & 1  & 0  \\
+                            0 & 0 & 1 & 0 & 0  & 1  \\
+                            0 & 0 & 0 & 2 & 1  & -1 \\
+                            0 & 0 & 0 & 0 & -2 & 3
+                        \end{array}\right]  & \text{ and } \m{B}=\left[\begin{array}{c   c   c   c}
+                                                                           1  & 2 & 0  & 0 \\
+                                                                           2  & 1 & 0  & 0 \\
+                                                                           -1 & 1 & 0  & 0 \\
+                                                                           0  & 0 & 1  & 2 \\
+                                                                           0  & 0 & 2  & 1 \\
+                                                                           0  & 0 & -1 & 1
+                                                                       \end{array}\right] \\
+        \m{A}=\left[\begin{array}{c   c   c |  c   c   c}
+                            1 & 0 & 0 & 1 & 0  & 0  \\
+                            0 & 1 & 0 & 0 & 1  & 0  \\
+                            0 & 0 & 1 & 0 & 0  & 1  \\
+                            \hline
+                            0 & 0 & 0 & 2 & 1  & -1 \\
+                            0 & 0 & 0 & 0 & -2 & 3
+                        \end{array}\right] & \text{ and } \m{B}=\left[\begin{array}{c   c  | c   c}
+                                                                          1  & 2 & 0  & 0 \\
+                                                                          2  & 1 & 0  & 0 \\
+                                                                          -1 & 1 & 0  & 0 \\
+                                                                          \hline
+                                                                          0  & 0 & 1  & 2 \\
+                                                                          0  & 0 & 2  & 1 \\
+                                                                          0  & 0 & -1 & 1
+                                                                      \end{array}\right] \\
+        \m{C},\m{D}\text{ will be }\m{C}=\mtwothree{2}{0}{1}{-2}{-1}{3} & \text{ and } \m{D}=\mthreetwo{1}{2}{-1}{2}{1}{1} \\
+        \m{A}=\mtwotwo{\m{I}_3}{0}{\m{I}_3}{\m{C}} & \text{ and } \m{B}=\mtwotwo{\m{D}}{0}{0}{\m{D}} \\
+        \m{A}\m{B}&=\mtwotwo{\m{I}_3\m{D}}{0}{\m{I}_3\m{D}}{\m{C}\m{D}} \\
+        &=\mtwotwo{\m{D}}{0}{\m{D}}{\m{C}\m{D}} \\
+        \m{C}\m{D}&=\mtwotwo{5}{-7}{4}{1} \\
+        \m{A}\m{B}&=\left[\begin{array}{c c | c c}
+            1&2&1&2 \\
+            2&1&2&1 \\
+            -1&1&-1&1\\
+            \hline
+            0&0&5&4 \\
+            0&0&-7&1 
+        \end{array}\right]
+    \end{split}
+\]
+\subsection{Theorem}
+$\m{A}\in\m{M}_{m,n}$ သည် $a_1,a_2,\dots,a_n$ ဆိုတဲ့ column တွေရှိပြီး $\vec{v}\in\m{R}^n$ သည် column vector ဖြစ်လျှင်
+\begin{equation}
+        {\color{purple} \m{A}\vec{v}=\left[\begin{array}{c|c|c|c}
+            a_1 & a_2 & \dots & a_n
+        \end{array}\right]\begin{bmatrix}
+            v1 \\ v_2 \\ \vdots \\ v_n
+        \end{bmatrix}=v_1a_1+v_2a_2+\dots+v_na_n}
+\end{equation}

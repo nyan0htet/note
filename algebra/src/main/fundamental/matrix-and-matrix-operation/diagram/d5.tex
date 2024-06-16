@@ -1,0 +1,45 @@
+\tdplotsetmaincoords{45}{100}
+\begin{tikzpicture}[tdplot_main_coords,scale=2]
+    %grid
+    \draw [-,very thin,lightgray,dashed] (0,2,0) -- (1,2,0);
+    \draw [-,very thin,lightgray,dashed] (0,2,0) -- (0,2,3);
+    \draw [-,very thin,lightgray,dashed] (0,2,3) -- (1,2,3);
+    \draw [-,very thin,lightgray,dashed] (0,0,3) -- (0,2,3);
+    \draw [-,very thin,lightgray,dashed] (1,0,0) -- (1,2,0);
+    \draw [-,very thin,lightgray,dashed] (1,2,0) -- (1,2,3);
+    %grid
+    \draw [-,very thin,lightgray,dashed] (0,3,0) -- (1,3,0);
+    \draw [-,very thin,lightgray,dashed] (0,3,0) -- (0,3,2);
+    \draw [-,very thin,lightgray,dashed] (0,3,2) -- (1,3,2);
+    \draw [-,very thin,lightgray,dashed] (0,0,2) -- (0,3,2);
+    \draw [-,very thin,lightgray,dashed] (1,0,0) -- (1,3,0);
+    \draw [-,very thin,lightgray,dashed] (1,3,0) -- (1,3,2);
+    %draw axis value
+    \foreach \x in {1}
+        {
+            \draw (\x,0,0) -- (\x,0,0) node [above left] {$\x$};
+            \draw [-,thin] (\x,-0.05,0) -- (\x,0.05,0);
+        }
+    \foreach \y in {0,1,2,3}
+        {
+            \draw (0,\y,0) -- (0,\y,0) node [below] {$\y$};
+            \draw [-,thin] (-0.05,\y,0) -- (0.05,\y,0);
+        }
+    \foreach \z in {1,2,3}
+        {
+            \draw (0,0,\z) -- (0,0,\z) node [left] {$\z$};
+            \draw [-,thin] (0,-0.05,\z) -- (0,0.05,\z);
+        }
+    %draw lines
+    \draw [->] (-0.5,0,0) -- (1.5,0,0) node[below left]{$x$};
+    \draw [->] (0,-0.5,0) -- (0,3.5,0) node[right]{$y$};
+    \draw [->] (0,0,-0.5) -- (0,0,3.5) node[above]{$z$};
+    \draw [->,very thick,blue] (0,0,0) -- (1,2,3) node[right]{$\vec{v}=(1,2,3)$};
+    \draw [->,very thick,cyan] (0,0,0) -- (1,3,2) node[right]{$\vec{w}=(1,3,2)$};
+    \draw [->,very thick,magenta] (0,0,0) -- node[midway,sloped,below]{$P_u({\vec{w}})=(\frac{13}{14},\frac{39}{14},\frac{26}{14})$} (\fpeval{13/14},\fpeval{39/14},\fpeval{26/14});
+    \draw [->,very thick,orange] (1,2,3) -- node[right]{projection onto $\vec{w}$} (\fpeval{13/14},\fpeval{39/14},\fpeval{26/14}) ;
+    \draw [-,very thick,lightgray] (0.9,1.8,2.7) -- (\fpeval{0.9-0.0103},\fpeval{1.8+0.1135},\fpeval{2.7-0.16496}) ;
+    \draw [-,very thick,lightgray] (1.0897,2.3135,3.1350) -- (\fpeval{0.9-0.0103},\fpeval{1.8+0.1135},\fpeval{2.7-0.16496}) ;
+\end{tikzpicture}
+\captionof{figure}{{\footnotesize 3D vector $\vec{v}=(1,3,2)\in{R^3}$}}
+\label{fig:vector-and-vector-operation-d1}

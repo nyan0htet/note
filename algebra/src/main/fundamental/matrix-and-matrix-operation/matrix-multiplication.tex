@@ -1,0 +1,115 @@
+\section{Matrix Multiplication ($\m{A}\m{B}$)}
+\subsection{မှတ်စု}
+\begin{itemize}
+    \item ${dimension}^m$ နှင့် ${coordinate}^n$ အတွက် $m \times n$ ဖြစ်တဲ့ $\m{A}\in\m{M}_{m,n}$ \\
+    \item ${dimension}^n$ နှင့် ${coordinate}^p$ အတွက် $n \times p$ ဖြစ်တဲ့ $\m{B}\in\m{M}_{n,p}$ \\
+    \item $m \times n$ နှင့် $n \times p$ တွင် $n$ နှင့် $n$ တူနေမှသာ product ရှာလို့ရတယ်။
+\end{itemize}
+\subsection{Definition}
+$\m{A}\in\m{M}_{m,n}$ နှင့် $\m{B}\in\m{M}_{n,p}$ ၏ product $ \m{A}\m{B}$ သည်  $m \times p$ ဖြစ်လာတယ်။ $m \times p$ matrix ၏ (i,j) entry တွေသည် $1 \le i \le m$ ဖြစ်ပြီး $1 \le j \le p$ ဖြစ်ပြီး  $[\m{A}\m{B}]_{i,j}$နေရာမှာရှိတဲ့ တန်ဖိုးကိုရှာလိုလျှင်,
+\begin{equation}
+    {\color{purple} \begin{split}
+        [AB]_{i,j}\stackrel{def}{=}a_{i,1}b_{1,j}+a_{i,2}b_{2,j}+\dots+a_{i,n}b_{n,j}
+    \end{split}}
+\end{equation}
+$\m{A}=\mthreetwo{a_{1,1}}{a_{2,1}}{a_{3,1}}{a_{1,2}}{a_{2,2}}{a_{3,2}}\in\m{M}_{3,2}$ နှင့် $\m{B}=\mtwofour{b_{1,1}}{b_{2,1}}{b_{1,2}}{b_{2,2}}{b_{1,3}}{b_{2,3}}{b_{1,4}}{b_{2,4}}\in\m{M}_{2,4}$ ဖြစ်လျှင်,
+\[
+    \begin{split}
+        \m{A}\m{B}&={\mthreetwo{a_{1,1}}{a_{2,1}}{a_{3,1}}{a_{1,2}}{a_{2,2}}{a_{3,2}}}_{3 \times {\color{orange} \stackrel{\text{တူ}}{2}}}{\mtwofour{b_{1,1}}{b_{2,1}}{b_{1,2}}{b_{2,2}}{b_{1,3}}{b_{2,3}}{b_{1,4}}{b_{2,4}}}_{{\color{orange} \stackrel{\text{တူ}}{2}} \times 4} \\
+        &={\begin{bmatrix}
+            a_{1,1}b_{1,1}+a_{1,2}b_{2,1} & a_{1,1}b_{1,2}+a_{1,2}b_{2,2} & a_{1,1}b_{1,3}+a_{1,2}b_{2,3} & a_{1,1}b_{1,4}+a_{1,2}b_{2,4} \\
+            a_{2,1}b_{1,1}+a_{2,2}b_{2,1} & a_{2,1}b_{1,2}+a_{2,2}b_{2,2} & a_{2,1}b_{1,3}+a_{2,2}b_{2,3} & a_{2,1}b_{1,4}+a_{1,2}b_{2,4} \\
+            a_{3,1}b_{1,1}+a_{3,2}b_{2,1} & a_{3,1}b_{1,2}+a_{3,2}b_{2,2} & a_{3,1}b_{1,3}+a_{3,2}b_{2,3} & a_{3,1}b_{1,4}+a_{1,2}b_{2,4}
+        \end{bmatrix}}_{3 \times 4}
+    \end{split}
+\]
+\subsection{Theorem}
+$\m{A},\m{B},\m{C}$ တွေက matrix တွေဖြစ်ပြီး $c\in\m{R}$ ဖြစ်လျှင်,
+\begin{equation}
+    {\color{purple} \begin{split}
+        (a)\hspace{8mm} (\m{A}\m{B})\m{C}&=\m{A}(\m{B}\m{C}) \\
+        (b)\hspace{4mm} \m{A}(\m{B}+\m{C})&=\m{A}\m{B}+\m{A}\m{C} \\
+        (c)\hspace{4mm} (\m{A}+\m{B})\m{C}&=\m{A}\m{C}+\m{B}\m{C} \\
+        (d)\hspace{5mm} c(\m{A}+\m{B})&=c\m{A}+c\m{B} \\
+    \end{split}}
+\end{equation}
+\subsection{Example}
+$\m{A}=\mtwotwo{1}{3}{2}{4}, \hspace{3mm} \m{B}=\mtwothree{5}{8}{6}{9}{7}{10},$ and $\m{C}=\mthreetwo{1}{0}{2}{0}{-1}{-1}$ \\[1ex]
+$\m{A}\m{B}$ကိုရှာလျှင်,
+\[
+    \begin{split}
+        \m{A}\m{B}&={\mtwotwo{1}{3}{2}{4}}_{2 \times {\color{orange} \stackrel{\text{တူ}}{2}}}{\mtwothree{5}{8}{6}{9}{7}{10}}_{{\color{orange} \stackrel{\text{တူ}}{2}} \times 3} \\
+        &={\mtwothree
+        {1\times5+2\times8}
+        {3\times5+4\times8}
+        {1\times6+2\times9}
+        {3\times6+4\times9}
+        {1\times7+2\times10}
+        {3\times7+4\times10}
+        }_{2 \times 3} \\
+        &=\mtwothree{21}{47}{24}{54}{27}{61}
+    \end{split}
+\]
+$\m{A}\m{C}$ကိုရှာလျှင်,
+\[
+        \m{A}\m{C}={\mtwotwo{1}{3}{2}{4}}_{2 \times {\color{orange} \stackrel{\text{မတူ}}{2}}}{\mthreetwo{1}{0}{2}{0}{-1}{-1}}_{{\color{orange} \stackrel{\text{မတူ}}{3}} \times 2}=\text{2 နှင့် 3 မတူသောကြောင့်ရှာလို့မရပါ}
+\]
+$\amtwotwo{1}{0}{1}{1}{A}{4},\amtwotwo{1}{1}{0}{1}{B}{4}$ ဖြစ်လျှင် 
+\[
+    \begin{split}
+        \m{A}\m{B}&\quad and\quad  \m{B}\m{A} \\
+        \mtwotwo{1}{0}{1}{1}\mtwotwo{1}{1}{0}{1}&\quad and\quad \mtwotwo{1}{1}{0}{1}\mtwotwo{1}{0}{1}{1} \\
+        \mtwotwo{1\times1+1\times1}{0\times1+1\times1}{1\times0+1\times1}{0\times0+1\times1}&\quad and\quad \mtwotwo{1\times1+0\times0}{1\times1+1\times0}{0\times1+1\times1}{1\times1+1\times1} \\
+        \mtwotwo{2}{1}{1}{1}&\hspace{4.5mm}\neq\hspace{4.5mm}\mtwotwo{1}{1}{1}{2} \\
+        \m{A}\m{B}&\hspace{4.5mm}\neq\hspace{4.5mm}\m{B}\m{A}
+    \end{split}
+\]
+\subsection{Square \& Identity Matrix}
+row နှင့် column တူနေရင် square matrix ဖြစ်တယ်။ Identity Matrix နှင့်မြှောက်ရင် မြှောက်မယ့် Matrix ဘာမှမပြောင်းလဲသွားဘူး။ Identity matrix သည်main diagonal သည် 1ဖြစ်တဲ့ square matrix ဖြစ်တယ်။
+\[
+    \m{I}_2=\mtwotwo{1}{0}{0}{1} \text{ and } \m{I}_3=\mthreethree{1}{0}{0}{0}{1}{0}{0}{0}{1}
+\]
+\subsection{Theorem}
+$\m{A}\in\m{M}_{m,n}$ဖြစ်လျှင်
+\begin{equation}
+    {\color{purple}\begin{split}
+         (a)\hspace{5mm}\m{A}\m{I}_n&=\m{A}=\m{I}_m\m{A} \\
+         \m{A}^2&=\m{A}\m{A} \\
+         \m{A}^3&=\m{A}\m{A}\m{A} \\
+         (b)\hspace{6mm}\m{A}^k&\stackrel{def}{=}\underbrace{\m{A}\m{A}\dots\m{A}}_{\text{k copies}}
+    \end{split}}
+\end{equation}
+$\m{A}=\mtwotwo{3}{1}{5}{4}$ ဖြစ်ပြီး $\m{A}\m{I},\m{I}\m{A}$ ကိုရှာလျှင်
+\[
+    \begin{split}
+        \m{A}\m{I}&=\mtwotwo{3}{1}{5}{4}\mtwotwo{1}{0}{0}{1} \\
+        &=\mtwotwo{3 \times 1+5 \times 0}{1 \times 1+4 \times 0}{3 \times 0+5 \times 1}{1 \times 0+4 \times 1} \\
+        &=\mtwotwo{3}{1}{5}{4} \\
+        \m{I}\m{A}&=\mtwotwo{1}{0}{0}{1}\mtwotwo{3}{1}{5}{4} \\
+        &=\mtwotwo{1x3+0x1}{0x3+1x1}{1x5+0x4}{0x5+1x4} \\
+        &=\mtwotwo{3}{1}{5}{4} \\
+        \m{A}\m{I}&=\m{I}\m{A} \\
+        \m{I}^2&=\m{I} \\
+        \m{I}^7&=\m{I}
+    \end{split}
+\]
+$\m{A}^2,\m{A}^4$ ကိုရှာလျှင်
+\[
+    \begin{split}
+        \m{A}^2&=\m{A}\m{A} \\
+        &=\mtwotwo{3}{1}{5}{4}\mtwotwo{3}{1}{5}{4} \\
+        &=\mtwotwo{3 \times 3+5 \times 1}{1 \times 3+4 \times 1}{3 \times 5+5 \times 4}{1 \times 5+4 \times 4} \\
+        &=\mtwotwo{14}{7}{35}{21} \\
+        \m{A}^4&={(\m{A}^2)}^2 \\
+        &=\m{A}^2\m{A}^2 \\
+        &=\mtwotwo{14}{7}{35}{21}\mtwotwo{14}{7}{35}{21} \\
+        &=\mtwotwo{441}{245}{1225}{686} \\
+    \end{split}
+\]
+\section{Row Vector and Column Vector}
+row တစ်ခုပဲရှိတဲ့ $1 \times n$ matrix $\m{A}=\begin{bmatrix}
+    1 & 2 & 4
+\end{bmatrix}$ ကို row vector $\vec{v}$ လို့ခေါ်သည်။
+column တစ်ခုပဲရှိတဲ့ $m \times 1$ matrix $\m{A}=\begin{bmatrix}
+    1 \\ 2 \\ 4
+\end{bmatrix}$ ကို column vector $\vec{w}$ လို့ခေါ်သည်။
