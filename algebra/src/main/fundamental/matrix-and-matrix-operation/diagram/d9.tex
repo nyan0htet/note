@@ -1,0 +1,46 @@
+\tdplotsetmaincoords{65}{105}
+\begin{tikzpicture}[tdplot_main_coords,scale=2]
+    %grid
+    \draw [-,very thin,lightgray,dashed] (0,-1,0) -- (3,-1,0);
+    \draw [-,very thin,lightgray,dashed] (0,-1,0) -- (0,-1,2);
+    \draw [-,very thin,lightgray,dashed] (0,-1,2) -- (3,-1,2);
+    \draw [-,very thin,lightgray,dashed] (0,0,2) -- (0,-1,2);
+    \draw [-,very thin,lightgray,dashed] (3,0,0) -- (3,-1,0);
+    \draw [-,very thin,lightgray,dashed] (3,-1,0) -- (3,-1,2);
+    %grid
+    \draw [-,very thin,lightgray,dashed] (0,3.0981,0) -- (-0.6340,3.0981,0);
+    \draw [-,very thin,lightgray,dashed] (0,3.0981,0) -- (0,3.0981,2);
+    \draw [-,very thin,lightgray,dashed] (0,3.0981,2) -- (-0.6340,3.0981,2);
+    \draw [-,very thin,lightgray,dashed] (0,0,2) -- (0,3.0981,2);
+    \draw [-,very thin,lightgray,dashed] (-0.6340,0,0) -- (-0.6340,3.0981,0);
+    \draw [-,very thin,lightgray,dashed] (-0.6340,3.0981,0) -- (-0.6340,3.0981,2);
+    %draw axis value
+    \foreach \x in {-1,1,2,3}
+        {
+            \draw (\x,0,0) -- (\x,0,0) node [right] {$\x$};
+            \draw [-,thin] (\x,-0.05,0) -- (\x,0.05,0);
+        }
+    \foreach \y in {-1,0,1,2,3,4}
+        {
+            \draw (0,\y,0) -- (0,\y,0) node [below left] {$\y$};
+            \draw [-,thin] (-0.05,\y,0) -- (0.05,\y,0);
+        }
+    \foreach \z in {1,2}
+        {
+            \draw (0,0,\z) -- (0,0,\z) node [left] {$\z$};
+            \draw [-,thin] (0,-0.05,\z) -- (0,0.05,\z);
+        }
+    %draw lines
+    \draw [->] (-1.5,0,0) -- (3.5,0,0) node[below right]{$x$};
+    \draw [->] (0,-1.5,0) -- (0,4.5,0) node[below right]{$y$};
+    \draw [->] (0,0,-0.5) -- (0,0,2.5) node[above]{$z$};
+    \draw [->,very thick,blue] (0,0,0) -- (3,-1,2) node[midway,sloped,below]{$\vec{v}=(3,-1,2)$};
+    \draw [->,very thick,orange] (0,0,0) -- (-0.6340,3.0981,2) node[midway,sloped,below]{$R_{xy}^{\frac{2\pi}{3}}=(-0.6340,3.0981,2)$};
+% Draw Angle
+\coordinate (V) at (3,-1,2);
+\coordinate (O) at (0,0,0);
+\coordinate (W) at (-0.6340,3.0981,2);
+\pic [draw, "$\frac{2\pi}{3}\hspace{5mm}$", angle eccentricity=1.4, angle radius=8mm] {angle = W--O--V};
+\end{tikzpicture}
+\captionof{figure}{{\footnotesize rotation in 3d of $\vec{v}$ in z-axis}}
+\label{fig:vector-and-vector-operation-d9}

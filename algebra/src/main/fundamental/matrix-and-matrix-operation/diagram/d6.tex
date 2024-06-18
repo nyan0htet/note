@@ -1,4 +1,4 @@
-\tdplotsetmaincoords{45}{100}
+\tdplotsetmaincoords{45}{200}
 \begin{tikzpicture}[tdplot_main_coords,scale=2]
     %grid
     \draw [-,very thin,lightgray,dashed] (0,2,0) -- (1,2,0);
@@ -15,14 +15,22 @@
     \draw [-,very thin,lightgray,dashed] (1,0,0) -- (1,3,0);
     \draw [-,very thin,lightgray,dashed] (1,3,0) -- (1,3,2);
     %draw axis value
+    %grid
+    \draw [-,very thin,lightgray,dashed] (0,3.571,0) -- (0.857,3.571,0);
+    \draw [-,very thin,lightgray,dashed] (0,3.571,0) -- (0,3.571,0.714);
+    \draw [-,very thin,lightgray,dashed] (0,3.571,0.714) -- (0.857,3.571,0.714);
+    \draw [-,very thin,lightgray,dashed] (0,0,0.714) -- (0,3.571,0.714);
+    \draw [-,very thin,lightgray,dashed] (0.857,0,0) -- (0.857,3.571,0);
+    \draw [-,very thin,lightgray,dashed] (0.857,3.571,0) -- (0.857,3.571,0.714);
+    %draw axis value
     \foreach \x in {1}
         {
-            \draw (\x,0,0) -- (\x,0,0) node [above left] {$\x$};
+            \draw (\x,0,0) -- (\x,0,0) node [above right] {$\x$};
             \draw [-,thin] (\x,-0.05,0) -- (\x,0.05,0);
         }
-    \foreach \y in {0,1,2,3}
+    \foreach \y in {0,1,2,3,4}
         {
-            \draw (0,\y,0) -- (0,\y,0) node [below] {$\y$};
+            \draw (0,\y,0) -- (0,\y,0) node [below right] {$\y$};
             \draw [-,thin] (-0.05,\y,0) -- (0.05,\y,0);
         }
     \foreach \z in {1,2,3}
@@ -31,19 +39,15 @@
             \draw [-,thin] (0,-0.05,\z) -- (0,0.05,\z);
         }
     %draw lines
-    \draw [->] (-0.5,0,0) -- (1.5,0,0) node[below left]{$x$};
-    \draw [->] (0,-0.5,0) -- (0,3.5,0) node[right]{$y$};
+    \draw [->] (-0.5,0,0) -- (1.5,0,0) node[above right]{$x$};
+    \draw [->] (0,-0.5,0) -- (0,4.5,0) node[below right]{$y$};
     \draw [->] (0,0,-0.5) -- (0,0,3.5) node[above]{$z$};
-    \draw [->,very thick,blue] (0,0,0) -- (1,2,3) node[right]{$\vec{v}=(1,2,3)$};
-    \draw [->,very thick,cyan] (0,0,0) -- (1,3,2) node[right]{$\vec{w}=(1,3,2)$};
-    \draw [->,very thick,magenta] (0,0,0) -- node[midway,sloped,below]{$P_u({\vec{w}})=(\frac{13}{14},\frac{39}{14},\frac{26}{14})$} (\fpeval{13/14},\fpeval{39/14},\fpeval{26/14});
-    \draw [->,very thick,orange] (1,2,3) -- node[right]{projection onto $\vec{w}$} (\fpeval{13/14},\fpeval{39/14},\fpeval{26/14}) ;
-    \coordinate (V) at (\fpeval{13/14},\fpeval{39/14},\fpeval{26/14});
-    \coordinate (O) at (1,2,3);
-    \coordinate (W) at (0,0,0);
-    \pic [draw, "$90^{\circ}$", angle eccentricity=1.2, angle radius=8mm] {angle = W--O--V};
+    \draw [->,very thick,blue] (0,0,0) -- (1,2,3) node[midway,sloped,below]{$\vec{v}=(1,2,3)$};
+    \draw [->,very thick,cyan] (0,0,0) -- (1,3,2) node[midway,sloped,below]{$\vec{w}=(1,3,2)$};
+    % \draw [->,very thick,magenta] (0,0,0) -- node[midway,sloped,below]{$P_u({\vec{w}})=(\frac{13}{14},\frac{39}{14},\frac{26}{14})$} (\fpeval{13/14},\fpeval{39/14},\fpeval{26/14});
+    \draw [->,very thick,orange] (0,0,0) -- node[right]{ } (0.857,3.571,0.714) node[midway,sloped,below]{$F(\vec{v})=(0.857,3.571,0.714)$};
 % Draw Angle
 % \draw[thick] (X) -- (A) -- (Y) pic ["\ang{38}"scale=0.5, draw, thick, angle eccentricity=1.8] {angle = X--A--Y};
 \end{tikzpicture}
-\captionof{figure}{{\footnotesize 3D vector $\vec{v}=(1,3,2)\in{R^3}$}}
+\captionof{figure}{{\footnotesize Reflection of $\vec{v}$ by unit vector of $\vec{w}$}}
 \label{fig:vector-and-vector-operation-d1}

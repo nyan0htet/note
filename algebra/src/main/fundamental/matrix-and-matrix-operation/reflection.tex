@@ -1,0 +1,26 @@
+\subsection{Reflection အလင်းပြန်ခြင်း $F(\vec{v})$}
+\begin{equation}
+    {\color{purple}\begin{split}
+        \hat{u}&=\frac{\vec{v}}{\|\vec{v}\|} \\
+        F(\hat{u})&=2\hat{u}\hat{u}^T-\m{I} \\
+        F(\vec{v})&=F(\hat{u})\vec{v}
+    \end{split}}
+\end{equation}
+$\vec{v}=(1,2,3)$ ဖြစ်ပြီး $\vec{w}=(1,3,2)$ ၏ line တလျောက် reflectiion ဖြစ်တာကို ရှာလျှင်
+
+$\vec{w}$ ၏ unit vector $\hat{u}$ သည် $\frac{1}{\sqrt{14}}(1,3,2)$ ဖြစ်သည်။
+\[
+    \begin{split}
+        F(\hat{u}_{\vec{w}})&=\frac{2}{14}\mthreeone{1}{3}{2}\monethree{1}{3}{2}-\mthreethree{1}{0}{0}{0}{1}{0}{0}{0}{1} \\
+        &=\frac{2}{14}\mthreethree{1}{3}{2}{3}{9}{6}{2}{6}{4}-\mthreethree{1}{0}{0}{0}{1}{0}{0}{0}{1} \\
+        &=\mthreethree{\frac{2}{14}}{\frac{6}{14}}{\frac{4}{14}}{\frac{6}{14}}{\frac{18}{14}}{\frac{12}{14}}{\frac{4}{14}}{\frac{12}{14}}{\frac{8}{14}}-\mthreethree{\frac{14}{14}}{0}{0}{0}{\frac{14}{14}}{0}{0}{0}{\frac{14}{14}} \\
+        &=\mthreethree{-\frac{12}{14}}{\frac{6}{14}}{\frac{4}{14}}{\frac{6}{14}}{\frac{4}{14}}{\frac{12}{14}}{\frac{4}{14}}{\frac{12}{14}}{-\frac{6}{14}} \\
+        &=\mthreethree{-\frac{6}{7}}{\frac{3}{7}}{\frac{2}{7}}{\frac{3}{7}}{\frac{2}{7}}{\frac{6}{7}}{\frac{2}{7}}{\frac{6}{7}}{-\frac{3}{7}} \\
+        F(\vec{v})&=\mthreethree{-\frac{6}{7}}{\frac{3}{7}}{\frac{2}{7}}{\frac{3}{7}}{\frac{2}{7}}{\frac{6}{7}}{\frac{2}{7}}{\frac{6}{7}}{-\frac{3}{7}}\mthreeone{1}{2}{3} \\
+        &=\mthreeone{\frac{6}{7}}{\frac{25}{7}}{\frac{5}{7}} \\
+        &\approx\mthreeone{0.857}{3.571}{0.714}
+    \end{split}
+\]
+\begin{center}
+    \import{fundamental/matrix-and-matrix-operation/diagram}{d6.tex}
+\end{center}

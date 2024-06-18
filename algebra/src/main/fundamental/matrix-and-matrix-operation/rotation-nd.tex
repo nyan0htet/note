@@ -1,0 +1,23 @@
+\subsection{Rotation in higher dimension $R_{xyz}^\theta(\vec{v})$}
+\begin{equation}
+    {\color{purple}\begin{split}
+        [R_{yz}^\theta]&=\left[\begin{array}{c|c|c}
+            R_{yz}^\theta(e_1) & R_{yz}^\theta(e_2) & R_{yz}^\theta(e_3)
+        \end{array}\right] \\
+        &=\mthreethree{1}{0}{0}{0}{cos(\theta)}{sin(\theta)}{0}{-sin(\theta)}{cos(\theta)} \\
+        [R_{zx}^\theta]&=\mthreethree{cos(\theta)}{0}{sin(\theta)}{0}{1}{0}{-sin(\theta)}{0}{cos(\theta)} \\
+        [R_{xy}^\theta]&=\mthreethree{cos(\theta)}{sin(\theta)}{0}{-sin(\theta)}{cos(\theta)}{0}{0}{0}{1}
+    \end{split}}
+\end{equation}
+$\vec{v}=(3,-1,2)$ သည် $z$-axis အတိုင်း $\theta=\frac{2\pi}{3}$ ဖြင့် counter clockwise အတိုင်း rotate လုပ်လျှင်,
+\[
+    \begin{split}
+        [R_{xy}^{\frac{2\pi}{3}}]&=\mthreethree{cos(\frac{2\pi}{3})}{sin(\frac{2\pi}{3})}{0}{-sin(\frac{2\pi}{3})}{cos(\frac{2\pi}{3})}{0}{0}{0}{1} \\
+        &=\mthreethree{-0.5}{0.866}{0}{-0.866}{-0.5}{0}{0}{0}{1} \\
+        [R_{xy}^{\frac{2\pi}{3}}]\vec{v}&=\mthreethree{-0.5}{0.866}{0}{-0.866}{-0.5}{0}{0}{0}{1}\mthreeone{3}{-1}{2} \\
+        &\approx\mthreeone{-0.6340}{3.0981}{2}
+    \end{split}
+\]
+\begin{center}
+    \import{fundamental/matrix-and-matrix-operation/diagram}{d9.tex}
+\end{center}

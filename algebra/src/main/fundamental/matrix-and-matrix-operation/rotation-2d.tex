@@ -1,0 +1,35 @@
+\subsection{2D rotation $R_2^\theta(\vec{v})$}
+\begin{equation}
+    {\color{purple}\begin{split}
+        [R_2^\theta]&=\left[\begin{array}{c|c}
+            R_2^\theta(\vec{e}_1) &  R_2^\theta(\vec{e}_2)
+        \end{array}\right] \\
+        &=\mtwotwo{cos(\theta)}{sin(\theta)}{-sin(\theta)}{cos(\theta)} \\
+        R_2^\theta(\vec{v})&=[R_2^\theta]\vec{v} \\
+        &=\mtwotwo{cos(\theta)}{sin(\theta)}{-sin(\theta)}{cos(\theta)}\mtwoone{v_1}{v_2}
+    \end{split}}
+\end{equation}
+$\vec{v}=(3,1)$ ကို $\frac{\pi}{6}$ ဖြင့် counter clockwise အတိုင်းလှည့်လျှင်,
+\[
+    \begin{split}
+        R_2^{\frac{\pi}{6}}&=\mtwotwo{cos(\frac{\pi}{6})}{sin(\frac{\pi}{6})}{-sin(\frac{\pi}{6})}{cos(\frac{\pi}{6})} \\
+        &=\mtwotwo{0.866}{0.5}{-0.5}{0.866} \\
+        R_2^{\frac{\pi}{6}}(\vec{v})&=\mtwotwo{0.866}{0.5}{-0.5}{0.866}\mtwoone{3}{1} \\
+        &=\mtwoone{2.098}{2.366}
+    \end{split}
+\]
+\begin{center}
+    \import{fundamental/matrix-and-matrix-operation/diagram}{d7.tex}
+\end{center}
+$\vec{v}=(3,1)$ ကို $\frac{\pi}{6}$ ဖြင့် clockwise အတိုင်းလှည့်လျှင်,
+\[
+    \begin{split}
+        R_2^{-\frac{\pi}{6}}&=\mtwotwo{cos(-\frac{\pi}{6})}{sin(-\frac{\pi}{6})}{-sin(-\frac{\pi}{6})}{cos(-\frac{\pi}{6})} \\
+        &=\mtwotwo{0.866}{0.5}{-0.5}{0.866} \\
+        R_2^{-\frac{\pi}{6}}(\vec{v})&=\mtwotwo{0.866}{-0.5}{0.5}{0.866}\mtwoone{3}{1} \\
+        &=\mtwoone{3.098}{-0.634}
+    \end{split}
+\]
+\begin{center}
+    \import{fundamental/matrix-and-matrix-operation/diagram}{d8.tex}
+\end{center}

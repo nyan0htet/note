@@ -1,0 +1,40 @@
+\section{Area}
+$\vec{v},\vec{w}\in\m{R}^3$ ဖြစ်လျှင်,
+\begin{equation}
+    {\color{purple}
+        Area=\|\vec{v} \times \vec{w}\|=\sqrt{{\|\vec{v}\|}^2{\|\vec{w}\|}^2-(\vec{v}\cdot\vec{w})^2}=\|\vec{v}\|\|\vec{w}\|sin(\theta)
+    }
+\end{equation}
+$\vec{v}=(1,2,-1),\vec{w}=(2,1,2)$ အနားတွေရှိတဲ့ paprallelogram ၏ area ကိုရှာလျှင်,
+\[
+    \begin{split}
+        \|\vec{v}\times\vec{w}\|&=\| (1,2,-1)\times(2,1,2)\| \\
+        &=\|(4+1,-2-2,1-4)\| \\
+        &=\sqrt{5^2+(-4)^2+(-3)^2} \\
+        &=\sqrt{50} \\
+        &=\sqrt{25x2} \\
+        &=5\sqrt{2}
+    \end{split}
+    \]\[\begin{split}
+        \|\vec{v}\|&=\sqrt{1^2+2^2+(-1)^2} \\
+        &=\sqrt{6} \\
+        \|\vec{w}\|&=\sqrt{2^2+1^2+2^2} \\
+        &=3 \\
+        \vec{v}\cdot\vec{w}&=1 \times 2+2 \times 1+(-1) \times 2 \\
+        &=2 \\
+        \sqrt{\|\vec{v}\|^2\|\vec{w}\|^2-(\vec{v}\cdot\vec{w})^2}&=\sqrt{(\sqrt{6})^23^2-2^2} \\
+        &=\sqrt{54-4} \\
+        &=\sqrt{50} \\
+        &=5\sqrt{2}
+    \end{split}
+\]
+\[
+    \begin{split}
+        \theta&=cos^{-1}(\frac{\vec{v}\cdot\vec{w}}{\|\vec{v}\|\|\vec{w}\|}) \\
+        &=cos^{-1}(\frac{2}{3\sqrt{6}}) \\
+        &\approx74.207^{\circ} \\
+        \|\vec{v}\|\|\vec{w}\|sin(\theta)&=\sqrt{6} \times 3 \times \frac{5\sqrt{3}}{9} \\
+        &=\frac{5\sqrt{18}}{3} \\
+        &=5\sqrt{2}
+    \end{split}
+\]
