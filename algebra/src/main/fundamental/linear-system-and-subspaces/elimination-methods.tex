@@ -1,0 +1,89 @@
+\section{elimination methods}
+\subsection{forward elimination}
+non-zero row များ၏ leading entry ၏အောက်ဘက်ခြမ်းကို သုည များဖြစ်အောင်လုပ်ပြီး upper triangle ပုံစံပြောင်းခြင်းကို forward elemination လုပ်ခြင်းဖြစ်သည်။
+\[
+    \begin{split}
+        \left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            1 & 5 & -8 & 9 \\
+            2 & 4 & 5 & 12
+        \end{array}\right]&\xrightarrow{(1)Row_2-=Row_1}\left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            {\color{red}0} & 2 & -6 & 4 \\
+            2 & 4 & 5 & 12
+        \end{array}\right]\xrightarrow{(2)Row_3-=2Row_1}\left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            {\color{red}0} & 2 & -6 & 4 \\
+            {\color{red}0} & -2 & 9 & 2
+        \end{array}\right] \\
+        &\xrightarrow{(3)Row_3+=Row_2}\left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            {\color{red}0} & 2 & -6 & 4 \\
+            {\color{red}0} & {\color{red}0} & 3 & 6
+        \end{array}\right]\hspace{2mm}\text{(1, 2, 3 leading entry ၏အောက်ဘက် 0)}
+    \end{split}
+\]
+\subsection{normalization}
+non-zero row များ၏ leading entry များကို 1 ဖြစ်အောင်လုပ်ခြင်းဖြစ်တယ်။
+\[
+        \left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            {\color{red}0} & 2 & -6 & 4 \\
+            {\color{red}0} & {\color{red}0} & 3 & 6
+        \end{array}\right]\xrightarrow{(1)Row_2\times=\frac{1}{2}}\left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            {\color{red}0} & {\color{green} 1} & -3 & 2 \\
+            {\color{red}0} & {\color{red}0} & 3 & 6
+        \end{array}\right]\xrightarrow{(2)Row_3\times=\frac{1}{3}}\left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            {\color{red}0} & {\color{green} 1} & -3 & 2 \\
+            {\color{red}0} & {\color{red}0} & {\color{green} 1} & 2
+        \end{array}\right]
+\]
+\subsection{backward elimination}
+အောက်ဆုံး row ကနေ စပြီး leading entry များ၏ အပေါ်ဘက်ခြမ်း သုည ဖြစ်အောင်လုပ်ခြင်းဖြစ်တယ်။
+\[
+    \begin{split}
+        \left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            {\color{red}0} & {\color{green} 1} & -3 & 2 \\
+            {\color{red}0} & {\color{red}0} & {\color{green} 1} & 2
+        \end{array}\right]&\xrightarrow{(1)Row_2+=3Row_3}\left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            {\color{red}0} & {\color{green} 1} & {\color{red}0} & 8 \\
+            {\color{red}0} & {\color{red}0} & {\color{green} 1} & 2
+        \end{array}\right]\xrightarrow{(2)Row_1+=2Row_3}\left[\begin{array}{c c c | c}
+            1 & 3 & {\color{red}0} & 9 \\
+            {\color{red}0} & {\color{green} 1} & {\color{red}0} & 8 \\
+            {\color{red}0} & {\color{red}0} & {\color{green} 1} & 2
+        \end{array}\right] \\
+        &\xrightarrow{(3)Row_1-=3Row_2}\left[\begin{array}{c c c | c}
+            1 & {\color{red}0} & {\color{red}0} & -15 \\
+            {\color{red}0} & {\color{green} 1} & {\color{red}0} & 8 \\
+            {\color{red}0} & {\color{red}0} & {\color{green} 1} & 2
+        \end{array}\right]
+    \end{split}
+\]
+\subsection{back substitution}
+forward elimination လုပ်လို့ရလာတဲ့ matrix ကို normalization, backward elimination မလုပ်ပဲ တိုက်ရိုက် တန်ဖိုးရှာတွက်ခြင်းဖြစ်တယ်။
+\[
+    \begin{split}
+        \left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\ \hline
+            {\color{red}0} & 2 & -6 & 4 \\ \hline
+            {\color{red}0} & {\color{red}0} & 3 & 6
+        \end{array}\right]&\Rightarrow\begin{array}{c}
+            x+3y-2z=5 \\
+            y-3z=2 \\
+            3z=6
+        \end{array} \\
+        z&=2 \\
+        z=2\text{ ကို } y-3z=5\text{ တွင်အစားသွင်းလျှင်},& \\
+        y-3 \times 2 &=2 \\
+        y&=8 \\
+        z=2,y=8\text{ ကို } x+3y-2z=5\text{ တွင်အစားသွင်းလျှင်}&, \\
+        x+3\times8-2\times2&=5 \\
+        x+24-4&=5 \\
+        x&=-15
+    \end{split}
+\]

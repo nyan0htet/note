@@ -1,0 +1,63 @@
+\section{Matrix Form}
+\subsection{Row Echelon Form}
+\begin{itemize}
+    \item non-zero ဖြစ်တဲ့ row တွေ၏အောက်သည် zero တွေဖြစ်ရမယ်။$\mthreethree{1}{{\color{red}0}}{{\color{red}0}}{2}{{\color{red}0}}{{\color{red}0}}{0}{2}{{\color{red}0}}$
+    \item ပထမဆုံး non-zero row ၏ leading entry သည် နောက်ထပ် non-zero row ၏ leading entry ၏ ဘယ်ဘက်ခြမ်းမှာရှိရမယ်။$\mthreethree{{\color{red}1}}{0}{0}{2}{0}{0}{0}{{\color{red}2}}{0}$
+\end{itemize}
+row Echelon form သည်
+\begin{equation}
+    {\color{purple}\begin{split}
+        {\textbf{+}}a_{1,1}x+a_{1,2}y-a_{1,3}z&=b_1 \\
+        {\textbf{+}}a_{2,2}y-a_{2,3}z&=b_2 \\
+        {\textbf{+}}a_{3,3}z&=b_3 \\
+    \end{split}}
+\end{equation}
+ပုံစံဖြစ်အောင်ပြောင်းပြီး x,y,z တန်ဖိုးရှာတာဖြစ်ပါတယ်။
+$x+3y-2z=5, x+5y-8z=9, 2x+4y+5z=12$ linear system များကို row echelon form ပြောင်းလျှင်,
+\[
+    \begin{split}
+        \mthreeone{x+3y-2z}{x+5y-8z}{2x+4y+5z}&=\mthreeone{5}{9}{12} \\
+        \mthreethree{1}{1}{2}{3}{5}{4}{-2}{-8}{5}\mthreeone{x}{y}{z}&=\mthreeone{5}{9}{12} \\
+        \hspace{5mm}\left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            1 & 5 & -8 & 9 \\
+            2 & 4 & 5 & 12
+        \end{array}\right]&\xrightarrow[elimination]{forward}\left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            {\color{red}0} & 2 & -6 & 4 \\
+            {\color{red}0} & {\color{red}0} & 3 & 6
+        \end{array}\right]
+    \end{split}
+\]
+\subsection{Reduced Row Echelon Form}
+\begin{itemize}
+    \item Row Echelon Form ၏ rule တွေနှင့်ကိုက်ညီရမယ်။
+    \item leading entry တိုင်း၏တန်ဖိုးသည် 1 ဖြစ်ရမည်။
+    \item leading entry ရှိသည့် column သည် leading entry ကလွဲပြီး 0 ဖြစ်ရမည်။ $\mthreethree{1}{0}{0}{2}{0}{0}{0}{0}{1}$ or $\mtwothree{1}{0}{0}{1}{2}{4}$
+\end{itemize}
+$x+3y-2z=5, x+5y-8z=9, 2x+4y+5z=12$ linear system များကို Reduced row echelon form ပြောင်းလျှင်,
+\[
+    \begin{split}
+        \mthreeone{x+3y-2z}{x+5y-8z}{2x+4y+5z}&=\mthreeone{5}{9}{12} \\
+        \mthreethree{1}{1}{2}{3}{5}{4}{-2}{-8}{5}\mthreeone{x}{y}{z}&=\mthreeone{5}{9}{12} \\
+        \hspace{5mm}\left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            1 & 5 & -8 & 9 \\
+            2 & 4 & 5 & 12
+        \end{array}\right]&\xrightarrow[elimination]{forward}\left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            {\color{red}0} & 2 & -6 & 4 \\
+            {\color{red}0} & {\color{red}0} & 3 & 6
+        \end{array}\right] \\
+        &\xrightarrow{normalization}\left[\begin{array}{c c c | c}
+            1 & 3 & -2 & 5 \\
+            {\color{red}0} & {\color{green} 1} & -3 & 2 \\
+            {\color{red}0} & {\color{red}0} & {\color{green} 1} & 2
+        \end{array}\right] \\
+        &\xrightarrow[elimination]{backward}\left[\begin{array}{c c c | c}
+            1 & {\color{red}0} & {\color{red}0} & -15 \\
+            {\color{red}0} & {\color{green} 1} & {\color{red}0} & 8 \\
+            {\color{red}0} & {\color{red}0} & {\color{green} 1} & 2
+        \end{array}\right]
+    \end{split}
+\]

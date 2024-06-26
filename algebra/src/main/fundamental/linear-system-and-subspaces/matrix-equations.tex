@@ -1,0 +1,26 @@
+\section{Matrix Equations}
+\begin{equation}
+    {\color{purple} \begin{split}
+        a_{1,1}x_1+a_{1,2}x_2+\dots+a_{1,n}x_n&=b_1 \\
+        a_{2,1}x_1+a_{2,2}x_2+\dots+a_{2,n}x_n&=b_2 \\
+        &\vdots \\
+        a_{m,1}x_1+a_{m,2}x_2+\dots+a_{m,n}x_n&=b_m \\
+    \end{split}}
+\end{equation}
+$x+2y=4, 3x+4y=6$ ကို matrix equation ပြောင်းလျှင်,
+\[
+    \begin{split}
+        \mtwoone{x+2y}{3x+4y}&=\mtwoone{4}{6} \\
+        \mtwoone{1x+2y}{3x+4y}&=\mtwoone{4}{6} \\
+        \mtwotwo{1}{3}{2}{4}\mtwoone{x}{y}&=\mtwoone{4}{6} \\
+    \end{split}
+\]
+$\mtwothree{3}{2}{-2}{3}{1}{-2}\mtwoone{x}{y}=\mtwoone{-3}{5}$ ကို Matrix equation မှ linear equation ပြောင်းလျှင်,
+\[
+    \begin{split}
+        \mtwothree{3}{2}{-2}{3}{1}{-2}\mthreeone{x}{y}{z}&=\mtwoone{-3}{5} \\
+        \mtwoone{3x-2y+z}{2x+3y-2z}&=\mtwoone{-3}{5} \\
+        3x-2y+z=-3,&\hspace{1mm}2x+3y-2z=5 \\
+    \end{split}
+\]
+$3x-2y+z=-3,\hspace{1mm}2x+3y-2z=5$ တို့သည် linear equation များဖြစ်တယ်။

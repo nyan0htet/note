@@ -1,0 +1,78 @@
+\section{Matrix Elimination}
+\subsection{Gaussian elimination}
+matrix ကို row echelon form ပြောင်းပြီး back substitution လုပ်၍ x, y, z တို့ရှာပြီး linear system များ၏ solution ကိုရှာခြင်းဖြစ်သည်။
+$x+y=2, 2x-y=1, -x+2y=3$ ၏ solution(intersection) ကိုရှာလျှင်, 
+\[
+        \left[\begin{array}{c c | c}
+            1 & 1 & 2 \\
+            2 & -1 & 1 \\
+            -1 & 2 & 3
+        \end{array}\right]\xrightarrow[Row_3+=Row_1]{Row_2-=2Row_1}\left[\begin{array}{c c | c}
+            1 & 1 & 2 \\
+            {\color{red}0} & -3 & -3 \\
+            {\color{red}0} & 3 & 5
+        \end{array}\right]\xrightarrow{Row_3-=Row_2}\stackrel{Row EchelonForm}{\left[\begin{array}{c c | c}
+            1 & 1 & 2 \\
+            {\color{red}0} & -3 & -3 \\
+            {\color{red}0} & {\color{red}0} & 2
+        \end{array}\right]}
+\]
+$-3y=-3,x+y=2$ ပုံစံဖြစ်လာပြီး back substitution လုပ်လျှင် $0+0=2$ သည်တော့မဖြစ်နိုင်ပါ။ ထို့ကြောင့် solution (intersection) မရှိပါ။
+
+$x+y=2, 2x-y=1, -x+2y=1$ ၏ solution(intersection) ကိုရှာလျှင်, 
+\[
+        \left[\begin{array}{c c | c}
+            1 & 1 & 2 \\
+            2 & -1 & 1 \\
+            -1 & 2 & 1
+        \end{array}\right]\xrightarrow[Row_3+=Row_1]{Row_2-=2Row_1}\left[\begin{array}{c c | c}
+            1 & 1 & 2 \\
+            {\color{red}0} & -3 & -3 \\
+            {\color{red}0} & 3 & 3
+        \end{array}\right]\xrightarrow{Row_3-=Row_2}\stackrel{Row EchelonForm}{\left[\begin{array}{c c | c}
+            1 & 1 & 2 \\
+            {\color{red}0} & -3 & -3 \\
+            {\color{red}0} & {\color{red}0} & {\color{red}0}
+        \end{array}\right]}
+\]
+back substitution လုပ်လျှင်
+\[
+    \begin{split}
+        -3y&=-3 \\
+        y&=1 \\
+        x+y&=2 \\
+        x+1&=2 \\
+        x&=1
+    \end{split}
+\]
+\subsection{Gauss-Jordan Elimination}
+matrix ကို Reduced row echelon form ပုံစံပြောင်း၍ တတ်နိုင်သမျှ back substitution မလုပ်ပဲ solution ကိုရှာရန်ဖြစ်သည်။
+$x+y=2, 2x-y=1, -x+2y=1$ ၏ solution(intersection) ကိုရှာလျှင်, 
+\[
+    \begin{split}
+        \left[\begin{array}{c c | c}
+            1 & 1 & 2 \\
+            2 & -1 & 1 \\
+            -1 & 2 & 1
+        \end{array}\right]&\xrightarrow[Row_3+=Row_1]{Row_2-=2Row_1}\left[\begin{array}{c c | c}
+            1 & 1 & 2 \\
+            {\color{red}0} & -3 & -3 \\
+            {\color{red}0} & 3 & 3
+        \end{array}\right]\xrightarrow{Row_3-=Row_2}\stackrel{Row EchelonForm}{\left[\begin{array}{c c | c}
+            1 & 1 & 2 \\
+            {\color{red}0} & -3 & -3 \\
+            {\color{red}0} & {\color{red}0} & {\color{red}0}
+        \end{array}\right]} \\
+        &\xrightarrow[normalization]{Row_2\times=-\frac{1}{3}}\left[\begin{array}{c c | c}
+            1 & {\color{red}0} & 1 \\
+            {\color{red}0} & {\color{green} 1} & 1 \\
+            {\color{red}0} & {\color{red}0} & {\color{red}0}
+        \end{array}\right] \\
+        y&=1,x=1 \\
+    \end{split}
+\]
+\subsection*{Example Diagram}
+$x+y=2, 2x-y=1, -x+2y=1$ သည် $1,1$ တွင် intersection ရှိတယ်။
+\begin{center}
+    \import{fundamental/linear-system-and-subspaces/diagram}{d4.tex}
+\end{center} 
